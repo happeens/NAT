@@ -452,11 +452,21 @@ position = Vector2( 174.73, 91.5463 )
 
 [node name="base" type="Node2D" parent="."]
 
+_sections_unfolded = [ "Visibility" ]
+
 [node name="body" type="Sprite" parent="base"]
 
+position = Vector2( 0, 3.67508 )
+scale = Vector2( 1, 0.942577 )
 texture = ExtResource( 1 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z" ]
+__meta__ = {
+"_edit_bone_": true
+}
 
 [node name="eyes" type="Node2D" parent="base"]
+
+position = Vector2( -0.382894, 2.68018 )
 
 [node name="close" type="Sprite" parent="base/eyes"]
 
@@ -483,18 +493,17 @@ autoplay = "blink"
 
 [node name="arm" type="Sprite" parent="base"]
 
-position = Vector2( 0, 30 )
+position = Vector2( -9.68275, 30.8802 )
 script = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="pistol" type="Sprite" parent="base/arm"]
 
-position = Vector2( -12.3235, 1.46901 )
 texture = ExtResource( 5 )
 offset = Vector2( 12.3235, -31.469 )
 
 [node name="hand" type="Sprite" parent="base/arm"]
 
-position = Vector2( -12.7637, 1.46901 )
 texture = ExtResource( 6 )
 offset = Vector2( 11.8834, -31.469 )
 
