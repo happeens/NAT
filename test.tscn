@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 40.1311, 10 )
+extents = Vector2( 10, 10 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -14,9 +14,12 @@ position = Vector2( 488.507, 88.6742 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
+JUMP_SPEED = 500.0
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 position = Vector2( 12.348, 239.141 )
+scale = Vector2( 1e+06, 1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -24,6 +27,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }

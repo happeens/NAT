@@ -16,7 +16,7 @@ var linear_vel = Vector2()
 var air_time = 0
 var on_floor = false
 
-var jumps_available = 2
+var jumps_available = 1
 
 func _ready():
 	pass
@@ -46,5 +46,5 @@ func _physics_process(delta):
 	linear_vel.x = lerp(linear_vel.x, target_speed, 0.1)
 
 	if on_floor:
-		jumps_available = 2
+		jumps_available = 1
 
