@@ -1,12 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/player_flip.gd" type="Script" id=1]
 [ext_resource path="res://sprites/pistol dude/pistol_idle_body.png" type="Texture" id=2]
 [ext_resource path="res://sprites/pistol dude/pistol_idle_eyes_closed.png" type="Texture" id=3]
 [ext_resource path="res://sprites/pistol dude/pistol_idle_eyes_open.png" type="Texture" id=4]
-[ext_resource path="res://scripts/Rotator.gd" type="Script" id=5]
-[ext_resource path="res://sprites/pistol dude/pistol_idle_pistol.png" type="Texture" id=6]
-[ext_resource path="res://sprites/pistol dude/pistol_idle_hand.png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=1]
 
@@ -110,132 +107,77 @@ tracks/5/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("base_idle_right/arm/hand:position")
-tracks/6/interp = 1
+tracks/6/path = NodePath("base_idle_right/body:position")
+tracks/6/interp = 2
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, 5.47179 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("base_idle_right/arm/hand:scale")
-tracks/7/interp = 1
+tracks/7/path = NodePath("base_idle_right/body:rotation_deg")
+tracks/7/interp = 2
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ 0.0, 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("base_idle_right/arm/pistol:position")
-tracks/8/interp = 1
+tracks/8/path = NodePath("base_idle_right/body:scale")
+tracks/8/interp = 2
 tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1, 0.914503 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("base_idle_right/arm/pistol:rotation_deg")
+tracks/9/path = NodePath("base_idle_right/body:z")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("base_idle_right/arm/pistol:scale")
+tracks/10/path = NodePath("base_idle_right/eyes:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -0.598755, 4.19116 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("base_idle_right/body:position")
-tracks/11/interp = 2
+tracks/11/path = NodePath("base_idle_right/eyes:rotation_deg")
+tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 5.47179 ) ]
+"values": [ 0.0, 0.0 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("base_idle_right/body:rotation_deg")
-tracks/12/interp = 2
+tracks/12/path = NodePath("base_idle_right/eyes:scale")
+tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("base_idle_right/body:scale")
-tracks/13/interp = 2
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 0.914503 ) ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("base_idle_right/body:z")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 1,
-"values": [  ]
-}
-tracks/15/type = "value"
-tracks/15/path = NodePath("base_idle_right/eyes:position")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/imported = false
-tracks/15/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -0.598755, 4.19116 ) ]
-}
-tracks/16/type = "value"
-tracks/16/path = NodePath("base_idle_right/eyes:rotation_deg")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/imported = false
-tracks/16/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
-}
-tracks/17/type = "value"
-tracks/17/path = NodePath("base_idle_right/eyes:scale")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/imported = false
-tracks/17/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -315,7 +257,7 @@ tracks/5/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("base_idle_right/arm/hand:position")
+tracks/6/path = NodePath("base_idle_right/body:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -326,7 +268,7 @@ tracks/6/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("base_idle_right/arm/hand:rotation_deg")
+tracks/7/path = NodePath("base_idle_right/body:rotation_deg")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -337,7 +279,7 @@ tracks/7/keys = {
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("base_idle_right/arm/hand:scale")
+tracks/8/path = NodePath("base_idle_right/body:scale")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -348,7 +290,7 @@ tracks/8/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("base_idle_right/arm/pistol:position")
+tracks/9/path = NodePath("base_idle_right/eyes:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -359,7 +301,7 @@ tracks/9/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("base_idle_right/arm/pistol:rotation_deg")
+tracks/10/path = NodePath("base_idle_right/eyes:rotation_deg")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -370,77 +312,11 @@ tracks/10/keys = {
 "values": [ 0.0 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("base_idle_right/arm/pistol:scale")
+tracks/11/path = NodePath("base_idle_right/eyes:scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("base_idle_right/body:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("base_idle_right/body:rotation_deg")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("base_idle_right/body:scale")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/15/type = "value"
-tracks/15/path = NodePath("base_idle_right/eyes:position")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/imported = false
-tracks/15/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
-tracks/16/type = "value"
-tracks/16/path = NodePath("base_idle_right/eyes:rotation_deg")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/imported = false
-tracks/16/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/17/type = "value"
-tracks/17/path = NodePath("base_idle_right/eyes:scale")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/imported = false
-tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -493,22 +369,6 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = "blink"
 
-[node name="arm" type="Sprite" parent="base_idle_right"]
-
-position = Vector2( -9.68275, 30.8802 )
-script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="pistol" type="Sprite" parent="base_idle_right/arm"]
-
-texture = ExtResource( 6 )
-offset = Vector2( 12.3235, -31.469 )
-
-[node name="hand" type="Sprite" parent="base_idle_right/arm"]
-
-texture = ExtResource( 7 )
-offset = Vector2( 11.8834, -31.469 )
-
 [node name="base_idle_left" type="Node2D" parent="."]
 
 scale = Vector2( 0.4, 0.4 )
@@ -538,6 +398,7 @@ _sections_unfolded = [ "Offset", "Transform", "Z" ]
 
 [node name="open" type="Sprite" parent="base_idle_left/eyes"]
 
+position = Vector2( -0.233215, 0 )
 texture = ExtResource( 4 )
 flip_h = true
 _sections_unfolded = [ "Offset" ]
@@ -553,27 +414,6 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = "blink"
 
-[node name="arm" type="Sprite" parent="base_idle_left"]
-
-position = Vector2( 6.83441, 30.647 )
-script = ExtResource( 5 )
-_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
-
-[node name="pistol" type="Sprite" parent="base_idle_left/arm"]
-
-position = Vector2( -18.8069, -1.16608 )
-texture = ExtResource( 6 )
-offset = Vector2( 12.3235, -31.469 )
-flip_h = true
-_sections_unfolded = [ "Offset", "Transform" ]
-
-[node name="hand" type="Sprite" parent="base_idle_left/arm"]
-
-position = Vector2( -18.8069, -1.16608 )
-texture = ExtResource( 7 )
-offset = Vector2( 11.8834, -31.469 )
-flip_h = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 playback_process_mode = 1
@@ -585,3 +425,5 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "idle_right"
+
+
