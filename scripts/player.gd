@@ -20,8 +20,15 @@ var linear_vel = Vector2()
 var air_time = 0
 var on_floor = false
 
+var jumps_available = 1
+
 func _ready():
 	pass
+
+func _input(event):
+	if (on_floor or jumps_available > 0) and event.is_action_pressed("jump") and not event.is_echo():
+		linear_vel.y = -JUMP_SPEED
+		jumps_available -= 1
 
 func _physics_process(delta):
 	air_time += delta
@@ -65,4 +72,6 @@ func _physics_process(delta):
 
 	if on_floor and Input.is_action_pressed("jump"):
 		linear_vel.y = -JUMP_SPEED
+	if on_floor:
+		jumps_available = 1
 

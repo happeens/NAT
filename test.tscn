@@ -14,9 +14,12 @@ position = Vector2( 488.507, 88.6742 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
+JUMP_SPEED = 500.0
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 position = Vector2( 12.348, 239.141 )
+scale = Vector2( 1e+06, 1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -24,6 +27,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -36,8 +40,9 @@ shape = SubResource( 1 )
 
 [node name="icon" type="Sprite" parent="StaticBody2D"]
 
+modulate = Color( 0, 0, 0, 1 )
 scale = Vector2( 20, 1 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
 
 
