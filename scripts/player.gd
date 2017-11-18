@@ -40,11 +40,13 @@ func _input(event):
 		jumps_available += 1
 
 func _process(delta):
-	rpc_unreliable("process_position_update", get_tree().get_network_unique_id(), get_position(), linear_vel)
+	var is_local = network_id == get_tree().get_network_unique_id()
+
+	if is_local:
+		rpc_unreliable("process_position_update", get_tree().get_network_unique_id(), get_position(), linear_vel)
 
 remote func process_position_update(id, pos, vel):
 	var is_local = network_id == get_tree().get_network_unique_id()
-
 	if is_local:
 		return
 

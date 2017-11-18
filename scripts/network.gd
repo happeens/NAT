@@ -3,11 +3,26 @@ extends Node
 const DEFAULT_PORT = 15234
 const MAX_PEERS = 12
 
+var players = {}
+
 func _ready():
+	get_tree().connect("network_peer_connected", self, "_player_joined")
 	get_tree().connect("connected_to_server", self, "_player_connected")
 
+func _player_joined(id):
+	players[id] = id
+	print(str(players))
+
+	if !get_tree().is_network_server():
+		return
+	for p in players:
+		rpc_id(id, "spawn_character", p)
+
 func _player_connected():
-	rpc("spawn_character", get_tree().get_network_unique_id())
+	spawn_character_for_all(get_tree().get_network_unique_id())
+
+func spawn_character_for_all(id):
+	rpc("spawn_character", id)
 
 remote func spawn_character(id):
 	var network_id = get_tree().get_network_unique_id()
@@ -32,7 +47,8 @@ func _start_hosted_game():
 	var host = NetworkedMultiplayerENet.new()
 	host.create_server(DEFAULT_PORT, MAX_PEERS)
 	get_tree().set_network_peer(host)
-	spawn_character(get_tree().get_network_unique_id())
+	spawn_character(1)
+	players[1] = 1
 
 func _join_game():
 	# load world
@@ -41,5 +57,4 @@ func _join_game():
 	var host = NetworkedMultiplayerENet.new()
 	host.create_client("127.0.0.1", DEFAULT_PORT)
 	get_tree().set_network_peer(host)
-	spawn_character(get_tree().get_network_unique_id())
 
