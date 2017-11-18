@@ -17,14 +17,14 @@ var air_time = 0
 var on_floor = false
 
 func _ready():
-	set_fixed_process(true)
+	pass
 
-func _fixed_process(delta):
+func _physics_process(delta):
 	air_time += delta
 
 	linear_vel += delta * GRAVITY
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
-	if is_move_and_slide_on_floor():
+	if is_on_floor():
 		air_time = 0
 
 	on_floor = air_time < MIN_ONAIR_TIME

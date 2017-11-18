@@ -7,6 +7,7 @@
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
+
 [node name="Node2D" type="Node2D"]
 
 position = Vector2( 488.507, 88.6742 )
@@ -15,7 +16,7 @@ position = Vector2( 488.507, 88.6742 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-position = Vector2( 12.348, 381.385 )
+position = Vector2( 12.348, 239.141 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
