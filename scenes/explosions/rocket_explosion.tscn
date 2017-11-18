@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://sprites/explosions/rocket/rocket_explosion_02.png" type="Texture" id=1]
-[ext_resource path="res://sprites/explosions/rocket/rocket_explosion_01.png" type="Texture" id=2]
-[ext_resource path="res://sprites/explosions/rocket/rocket_explosion_03.png" type="Texture" id=3]
-[ext_resource path="res://sprites/explosions/rocket/rocket_explosion_04.png" type="Texture" id=4]
+[ext_resource path="res://scripts/killable_animation.gd" type="Script" id=1]
+[ext_resource path="res://sprites/explosions/rocket/rocket_explosion_02.png" type="Texture" id=2]
+[ext_resource path="res://sprites/explosions/rocket/rocket_explosion_01.png" type="Texture" id=3]
+[ext_resource path="res://sprites/explosions/rocket/rocket_explosion_03.png" type="Texture" id=4]
+[ext_resource path="res://sprites/explosions/rocket/rocket_explosion_04.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -358,10 +359,10 @@ tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/imported = false
 tracks/31/keys = {
-"times": PoolRealArray( 0, 0.22 ),
+"times": PoolRealArray( 0, 0.21 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.147936, 0.148491 ), Vector2( 0.147936, 0.148491 ) ]
+"values": [ Vector2( 0.147936, 0.148491 ), Vector2( 0.147934, 0.148506 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("yellow_inner2:rotation_deg")
@@ -369,7 +370,7 @@ tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/imported = false
 tracks/32/keys = {
-"times": PoolRealArray( 0, 0.22 ),
+"times": PoolRealArray( 0, 0.21 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
@@ -380,10 +381,10 @@ tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/imported = false
 tracks/33/keys = {
-"times": PoolRealArray( 0, 0.22 ),
+"times": PoolRealArray( 0, 0.21 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.0520997, 0.0508732 ), Vector2( 6.16015, 6.01513 ) ]
+"values": [ Vector2( 0.0520997, 0.0508732 ), Vector2( 8.06972, 7.87975 ) ]
 }
 tracks/34/type = "value"
 tracks/34/path = NodePath("yellow_inner2:modulate")
@@ -396,89 +397,102 @@ tracks/34/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/35/type = "method"
+tracks/35/path = NodePath(".")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/keys = {
+"times": PoolRealArray( 0.58 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "kill"
+} ]
+}
 
 [node name="rocket_explosion" type="Node2D"]
+
+scale = Vector2( 0.2, 0.2 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="red_inner" type="Sprite" parent="."]
 
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0.525728, 1.37665 )
-rotation = -1.57074
-scale = Vector2( 5.84973, 5.84973 )
-texture = ExtResource( 1 )
+scale = Vector2( 0.0369594, 0.0369594 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility", "Z" ]
 
 [node name="white_up" type="Sprite" parent="."]
 
-modulate = Color( 1, 1, 1, 0.0609034 )
+modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 0.390625, 0.390625, 0.390625, 1 )
-position = Vector2( 0.241258, -79.3722 )
-rotation = -1.556
-scale = Vector2( 2.68511, 2.6219 )
-texture = ExtResource( 2 )
+position = Vector2( 0.147936, -79.0922 )
+scale = Vector2( 0.00443408, 0.0043297 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="yellow_inner" type="Sprite" parent="."]
 
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0.147936, 0.148491 )
-rotation = -3.04922
-scale = Vector2( 4.718, 4.60693 )
-texture = ExtResource( 2 )
+scale = Vector2( 0.0520997, 0.0508732 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="yellow_inner2" type="Sprite" parent="."]
 
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0.147936, 0.148491 )
-scale = Vector2( 0.647683, 0.632435 )
-texture = ExtResource( 2 )
+scale = Vector2( 0.0520997, 0.0508732 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="white_up2" type="Sprite" parent="."]
 
-modulate = Color( 1, 1, 1, 0.0568432 )
+modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 0.382812, 0.376831, 0.376831, 1 )
 position = Vector2( -165.983, -1.14188 )
-rotation = -0.029642
-scale = Vector2( 2.78329, 2.71777 )
-texture = ExtResource( 2 )
+rotation = -1.00817
+scale = Vector2( 0.0531022, 0.0518521 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="white_right" type="Sprite" parent="."]
 
-modulate = Color( 1, 1, 1, 0.0747297 )
+modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 0.550781, 0.550781, 0.550781, 1 )
 position = Vector2( 118.476, 0.473274 )
-rotation = 1.49877
-scale = Vector2( 2.60012, 2.53891 )
-texture = ExtResource( 2 )
+scale = Vector2( 0.00443408, 0.0043297 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="white_down" type="Sprite" parent="."]
 
-modulate = Color( 1, 1, 1, 0.0225142 )
+modulate = Color( 1, 1, 1, 0.078353 )
 self_modulate = Color( 0.496094, 0.496094, 0.496094, 1 )
 position = Vector2( -16.4166, 112.29 )
-rotation = 1.66978
-scale = Vector2( 3.06936, 2.55294 )
-texture = ExtResource( 2 )
+rotation = 0.0977291
+scale = Vector2( 0.0206068, 0.033597 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="particle3" type="Sprite" parent="."]
 
-modulate = Color( 1, 1, 1, 0.565044 )
+modulate = Color( 1, 1, 1, 0 )
 self_modulate = Color( 0.947595, 0.976562, 0.0495911, 1 )
 position = Vector2( 0.525728, 1.37665 )
 scale = Vector2( 0.070281, 0.070281 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="particle4" type="Sprite" parent="."]
 
 visible = false
 position = Vector2( 0.525728, 1.37665 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
