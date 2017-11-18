@@ -1,0 +1,123 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Join.gd" type="Script" id=2]
+[ext_resource path="res://scripts/HostButton.gd" type="Script" id=3]
+[ext_resource path="res://scripts/network.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Node2D" type="Node2D"]
+
+position = Vector2( 488.507, 88.6742 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+position = Vector2( 12.348, 239.141 )
+scale = Vector2( 1e+06, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+
+position = Vector2( -18.9694, -0.122925 )
+scale = Vector2( 48.3064, 2.60899 )
+shape = SubResource( 1 )
+
+[node name="icon" type="Sprite" parent="StaticBody2D"]
+
+modulate = Color( 0, 0, 0, 1 )
+scale = Vector2( 20, 1 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
+
+[node name="NetworkPanel" type="Panel" parent="."]
+
+self_modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -222.0
+margin_top = -283.0
+margin_right = 186.0
+margin_bottom = 191.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Anchor", "Visibility" ]
+
+[node name="Join" type="Button" parent="NetworkPanel"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -128.5
+margin_top = 74.0
+margin_right = -144.0
+margin_bottom = 94.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Join"
+flat = false
+script = ExtResource( 2 )
+_sections_unfolded = [ "Anchor" ]
+
+[node name="Host" type="Button" parent="NetworkPanel"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 257.0
+margin_top = 370.0
+margin_right = 299.0
+margin_bottom = 390.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Host"
+flat = false
+script = ExtResource( 3 )
+
+[node name="Network" type="Node" parent="."]
+
+script = ExtResource( 4 )
+
+[node name="icon2" type="Sprite" parent="."]
+
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -384.087, -50.0238 )
+rotation = 0.698132
+scale = Vector2( 2e+07, 1 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
+
+

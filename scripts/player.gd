@@ -19,10 +19,15 @@ var on_floor = false
 
 var jumps_available = 1
 
+var network_id = -1
+
 func _ready():
 	pass
 
 func _input(event):
+	if network_id != get_tree().get_network_unique_id():
+		return
+
 	if (on_floor or jumps_available > 0) and event.is_action_pressed("jump") and not event.is_echo() and not is_on_wall():
 		linear_vel.y = -JUMP_SPEED
 		jumps_available -= 1
@@ -34,7 +39,22 @@ func _input(event):
 		linear_vel.y = -JUMP_SPEED
 		jumps_available += 1
 
+func _process(delta):
+	rpc_unreliable("process_position_update", get_tree().get_network_unique_id(), get_position(), linear_vel)
+
+remote func process_position_update(id, pos, vel):
+	var is_local = network_id == get_tree().get_network_unique_id()
+
+	if is_local:
+		return
+
+	var character = get_node("/root/Node2D/" + str(id))
+	character.set_position(pos)
+	character.linear_vel = vel
+
 func _physics_process(delta):
+	var is_local = network_id == get_tree().get_network_unique_id()
+
 	air_time += delta
 
 	linear_vel += delta * GRAVITY
@@ -46,15 +66,15 @@ func _physics_process(delta):
 
 	on_floor = air_time < MIN_ONAIR_TIME
 
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("left") and is_local:
 		target_speed += -1
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("right") and is_local:
 		target_speed +=  1
 
 	target_speed *= WALK_SPEED
 	linear_vel.x = lerp(linear_vel.x, target_speed, 0.1)
 
-	if on_floor and Input.is_action_pressed("jump"):
+	if on_floor and Input.is_action_pressed("jump") and is_local:
 		linear_vel.y = -JUMP_SPEED
 	if on_floor:
 		jumps_available = 1
