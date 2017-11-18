@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 40.1311, 10 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -36,8 +36,9 @@ shape = SubResource( 1 )
 
 [node name="icon" type="Sprite" parent="StaticBody2D"]
 
+modulate = Color( 0, 0, 0, 1 )
 scale = Vector2( 20, 1 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
 
 
