@@ -12,6 +12,7 @@ func _ready():
 
 func _process(delta):
 	look_at( get_viewport().get_mouse_pos() )
+	rotate(-PI/2 - 0.5)
 	
 	if (ammo < max_ammo && OS.get_unix_time() > last_recharge + recharge_duration):
 		ammo += 1
