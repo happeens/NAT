@@ -12,9 +12,6 @@ const FLOOR_NORMAL = Vector2(0, -1)
 const SLOPE_SLIDE_STOP = 25.0
 const MIN_ONAIR_TIME = 0.1
 
-const WALL_JUMP_COOLDOWN = 0.5
-var wall_jump_timer = 0 # seconds
-
 var linear_vel = Vector2()
 
 var air_time = 0
@@ -29,14 +26,16 @@ func _input(event):
 	if (on_floor or jumps_available > 0) and event.is_action_pressed("jump") and not event.is_echo():
 		linear_vel.y = -JUMP_SPEED
 		jumps_available -= 1
+	
+	if is_on_wall() and !is_on_floor() and Input.is_action_pressed("jump") and not event.is_echo():
+		var collision = get_slide_collision(0)
+		var collision_direction = collision.get_normal()
+		linear_vel.x += collision_direction.x * WALL_JUMP_VEL
+		linear_vel.y = -JUMP_SPEED
+		jumps_available += 1
 
 func _physics_process(delta):
 	air_time += delta
-
-	if wall_jump_timer > 0:
-		wall_jump_timer -= delta
-	else:
-		wall_jump_timer = 0
 
 	linear_vel += delta * GRAVITY
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
@@ -54,14 +53,6 @@ func _physics_process(delta):
 
 	target_speed *= WALK_SPEED
 	linear_vel.x = lerp(linear_vel.x, target_speed, 0.1)
-
-	if is_on_wall() and !is_on_floor() and Input.is_action_pressed("jump") and wall_jump_timer == 0:
-		print("colliding on wall")
-		var collision = get_slide_collision(0)
-		var collision_direction = collision.get_normal()
-		linear_vel.x += collision_direction.x * WALL_JUMP_VEL
-		wall_jump_timer += WALL_JUMP_COOLDOWN
-		linear_vel.y = -JUMP_SPEED
 
 	if on_floor and Input.is_action_pressed("jump"):
 		linear_vel.y = -JUMP_SPEED
