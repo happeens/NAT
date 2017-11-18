@@ -12,7 +12,8 @@ func _ready():
 	set_process_input(true)
 
 func _process(delta):
-	look_at( get_viewport().get_mouse_pos() )
+	look_at( get_viewport().get_mouse_position() )
+	rotate(+0.5)
 	
 	var current_time = OS.get_unix_time()
 	
@@ -21,14 +22,15 @@ func _process(delta):
 		update_ammo_label()
 		last_recharge = current_time
 
-func _input(event):
-	if (
-		event.type == InputEvent.MOUSE_BUTTON &&
-		event.button_index == BUTTON_LEFT &&
-		event.pressed &&
-		ammo > 0
-	):
-		shoot(event.pos - get_pos())
+#func _input(event):	
+	#if (
+	#	event.type == InputEvent.MOUSE_BUTTON &&
+	#	event.button_index == BUTTON_LEFT &&
+	#	event.pressed &&
+	#	ammo > 0
+	#):
+	#	print("pew")
+	#	shoot(event.pos - get_pos())
 
 func shoot(where):
 	ammo -= 1
