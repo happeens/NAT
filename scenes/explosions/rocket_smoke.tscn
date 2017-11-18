@@ -1,6 +1,28 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://sprites/explosions/rocket/rocket_explosion_03.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Node2D
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	pass
+
+#func _process(delta):
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+#	pass
+
+func kill():
+	queue_free();"
+_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="Animation" id=1]
 
@@ -52,15 +74,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "kill"
+} ]
+}
 
 [node name="rocket_smoke" type="Node2D"]
 
+script = SubResource( 2 )
+_sections_unfolded = [ "Material", "Pause", "Visibility" ]
+
 [node name="smoke" type="Sprite" parent="."]
 
-modulate = Color( 1, 1, 1, 0.107503 )
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0.347595, 0.827942 )
-rotation = 3.14067
-scale = Vector2( 0.110219, 0.110219 )
+scale = Vector2( 0.0500379, 0.0500379 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
@@ -73,6 +110,6 @@ anims/smoke = SubResource( 1 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
-autoplay = ""
+autoplay = "smoke"
 
 

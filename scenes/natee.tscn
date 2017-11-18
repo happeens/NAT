@@ -399,18 +399,13 @@ script = ExtResource( 1 )
 
 [node name="base_idle_right" type="Node2D" parent="."]
 
-editor/display_folded = true
-visible = false
 scale = Vector2( 0.4, 0.4 )
 _sections_unfolded = [ "Transform", "Visibility", "Z" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="body" type="Sprite" parent="base_idle_right"]
 
-position = Vector2( 0, 0.221202 )
-scale = Vector2( 1, 0.996544 )
+position = Vector2( 0, 5.10124 )
+scale = Vector2( 1, 0.920293 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z" ]
 __meta__ = {
@@ -419,7 +414,7 @@ __meta__ = {
 
 [node name="eyes" type="Node2D" parent="base_idle_right"]
 
-position = Vector2( 6.42905, 1.58027 )
+position = Vector2( 6.42905, 5.68819 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="close" type="Sprite" parent="base_idle_right/eyes"]
@@ -458,15 +453,13 @@ autoplay = "idle_right"
 
 [node name="base_walk_right" type="Node2D" parent="."]
 
+visible = false
 scale = Vector2( 0.4, 0.4 )
 _sections_unfolded = [ "Transform", "Visibility", "Z" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="body" type="Sprite" parent="base_walk_right"]
 
-scale = Vector2( 0.973733, 1 )
+scale = Vector2( 0.939774, 1 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z" ]
 __meta__ = {
@@ -475,7 +468,7 @@ __meta__ = {
 
 [node name="eyes" type="Node2D" parent="base_walk_right"]
 
-position = Vector2( 3.06678, 0.541255 )
+position = Vector2( 2.20617, 0.39782 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="close" type="Sprite" parent="base_walk_right/eyes"]

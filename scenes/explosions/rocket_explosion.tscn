@@ -9,7 +9,7 @@
 
 resource_name = "explosion"
 length = 0.6
-loop = false
+loop = true
 step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("particle4:position")
@@ -401,29 +401,29 @@ tracks/34/keys = {
 
 [node name="red_inner" type="Sprite" parent="."]
 
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.377147 )
 position = Vector2( 0.525728, 1.37665 )
-rotation = -1.5708
-scale = Vector2( 5.86958, 5.86958 )
+rotation = -1.39714
+scale = Vector2( 3.82265, 3.82265 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Animation", "Offset", "Transform", "Visibility", "Z" ]
 
 [node name="white_up" type="Sprite" parent="."]
 
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.956186 )
 self_modulate = Color( 0.390625, 0.390625, 0.390625, 1 )
-position = Vector2( 0.903519, -81.3589 )
-rotation = -1.5708
-scale = Vector2( 2.81393, 2.74769 )
+position = Vector2( 0.870414, -81.2596 )
+rotation = -0.943077
+scale = Vector2( 1.3704, 1.33814 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="yellow_inner" type="Sprite" parent="."]
 
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.562566 )
 position = Vector2( 0.147936, 0.148491 )
-rotation = -3.08743
-scale = Vector2( 4.77646, 4.66401 )
+rotation = -1.55377
+scale = Vector2( 2.42966, 2.37246 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
@@ -431,42 +431,43 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0.147936, 0.148491 )
-scale = Vector2( 6.16015, 6.01513 )
+scale = Vector2( 5.08552, 4.9658 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="white_up2" type="Sprite" parent="."]
 
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.977147 )
 self_modulate = Color( 0.382812, 0.376831, 0.376831, 1 )
 position = Vector2( -165.983, -1.14188 )
-scale = Vector2( 2.866, 2.79853 )
+rotation = -0.509552
+scale = Vector2( 1.4443, 1.4103 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="white_right" type="Sprite" parent="."]
 
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.819721 )
 self_modulate = Color( 0.550781, 0.550781, 0.550781, 1 )
 position = Vector2( 118.476, 0.473274 )
-rotation = 1.5708
-scale = Vector2( 2.72485, 2.66071 )
+rotation = 0.763716
+scale = Vector2( 1.32709, 1.29585 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="white_down" type="Sprite" parent="."]
 
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.827553 )
 self_modulate = Color( 0.496094, 0.496094, 0.496094, 1 )
 position = Vector2( -16.4166, 112.29 )
-rotation = 1.74533
-scale = Vector2( 3.21587, 2.67401 )
+rotation = 0.898787
+scale = Vector2( 1.57413, 1.31736 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="particle3" type="Sprite" parent="."]
 
-modulate = Color( 1, 1, 1, 0.602235 )
+modulate = Color( 1, 1, 1, 0.287925 )
 self_modulate = Color( 0.947595, 0.976562, 0.0495911, 1 )
 position = Vector2( 0.525728, 1.37665 )
 scale = Vector2( 0.070281, 0.070281 )
@@ -488,6 +489,6 @@ anims/explosion = SubResource( 1 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
-autoplay = ""
+autoplay = "explosion"
 
 
