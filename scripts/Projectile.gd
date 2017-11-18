@@ -7,4 +7,7 @@ func _ready():
 	set_process(true)
 
 func _process(delta):
+	fly(delta)
+	
+func fly(delta):
 	translate(delta * speed * direction)

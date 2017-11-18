@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scripts/Rotator.gd" type="Script" id=1]
-[ext_resource path="res://scenes/test-projectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Weapon.gd" type="Script" id=1]
+[ext_resource path="res://scenes/weapons/test/test-projectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/lioncfaviconv2.jpg" type="Texture" id=3]
 
 [sub_resource type="CanvasItemMaterial" id=1]
