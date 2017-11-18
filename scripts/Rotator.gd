@@ -14,6 +14,7 @@ func _ready():
 func _process(delta):
 	look_at( get_viewport().get_mouse_position() )
 	rotate(+0.5)
+		
 	
 	var current_time = OS.get_unix_time()
 	
