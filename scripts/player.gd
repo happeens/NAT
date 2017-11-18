@@ -20,6 +20,11 @@ var on_floor = false
 var jumps_available = 1
 
 var network_id = -1
+func get_target_speed():
+	return target_speed
+
+func get_air_time():
+	return air_time
 
 func _ready():
 	pass
@@ -31,7 +36,7 @@ func _input(event):
 	if (on_floor or jumps_available > 0) and event.is_action_pressed("jump") and not event.is_echo() and not is_on_wall():
 		linear_vel.y = -JUMP_SPEED
 		jumps_available -= 1
-	
+
 	if is_on_wall() and !is_on_floor() and Input.is_action_pressed("jump") and not event.is_echo():
 		var collision = get_slide_collision(0)
 		var collision_direction = collision.get_normal()
@@ -80,4 +85,3 @@ func _physics_process(delta):
 		linear_vel.y = -JUMP_SPEED
 	if on_floor:
 		jumps_available = 1
-
