@@ -1,21 +1,25 @@
 extends Node2D
 
-const pi = 3.14152
+onready var ammo_label = get_node("Label")
 
 var max_ammo = 5
 var ammo = max_ammo
-var last_recharge = null
+var last_recharge = OS.get_unix_time()
 var recharge_duration = .8
 
 func _ready():
 	set_process(true)
+	set_process_input(true)
 
 func _process(delta):
 	look_at( get_viewport().get_mouse_pos() )
 	
-	if (ammo < max_ammo && OS.get_unix_time() > last_recharge + recharge_duration):
+	var current_time = OS.get_unix_time()
+	
+	if (ammo < max_ammo && current_time > last_recharge + recharge_duration):
 		ammo += 1
 		update_ammo_label()
+		last_recharge = current_time
 
 func _input(event):
 	if (
@@ -24,7 +28,6 @@ func _input(event):
 		event.pressed &&
 		ammo > 0
 	):
-		print("pew")
 		shoot(event.pos - get_pos())
 
 func shoot(where):
@@ -32,4 +35,5 @@ func shoot(where):
 	update_ammo_label()
 
 func update_ammo_label():
-	get_node("Label").set_text(ammo.to_string())
+	ammo_label.set_text( String(ammo) )
+	ammo_label.update()
