@@ -9,7 +9,7 @@
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
 direction = Vector2( 1, 0 )
-SMOKE_TIME = 100
+SMOKE_TIME = 0.3
 smoke = ExtResource( 2 )
 
 [node name="test-projectile" type="Sprite" parent="."]

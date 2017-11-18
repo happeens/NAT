@@ -23,7 +23,7 @@ func _process(delta):
 		last_recharge = current_time
 
 func _input(event):
-	if (event.is_action_pressed("shoot") && ammo > 0):
+	if (true && ammo > 0):
 		shoot(event.get_position() - get_position())
 
 func shoot(where):
