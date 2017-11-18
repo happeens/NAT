@@ -1,14 +1,18 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://sprites/tilesets/tilesetgrass.res" type="TileSet" id=1]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/tilesets/tilesetgrass.res" type="TileSet" id=2]
 
 [node name="TheFloorIsLava" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 260, -370 )
 
 [node name="TileMap" type="TileMap" parent="."]
 
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -21,10 +25,7 @@ collision_bounce = 0.0
 collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
-tile_data = PoolIntArray( -458735, 11, -327663, 11, -196591, 11, -131069, 11, -65519, 11, 3, 11, 65553, 12, 131075, 12 )
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-
-position = Vector2( 250, -190 )
+tile_data = PoolIntArray( -1900568, 3, -1900566, 5, -1769496, 10, -1769494, 20, -1638428, 2, -1638426, 0, -1638424, 18, -1638422, 20, -1638392, 21, -1507352, 10, -1507350, 16, -1507348, 0, -1507346, 0, -1507344, 4, -1507331, 21, -1507320, 11, -1376280, 9, -1376278, 8, -1376259, 12, -1376248, 9, -1376246, 0, -1376244, 4, -1245197, 6, -1245160, 3, -1245158, 5, -1114088, 10, -1114086, 20, -983016, 10, -983014, 20, -786443, 21, -851944, 10, -851942, 20, -851935, 6, -720914, 6, -655371, 12, -720872, 9, -720870, 8, -655348, 21, -524276, 11, -393221, 21, -393204, 11, -262149, 11, -327661, 6, -262141, 6, -262132, 11, -131077, 11, -131060, 12, -5, 11, 29, 6, 131067, 11, 262139, 12, 327661, 21, 458733, 11, 458766, 21, 589805, 11, 655351, 3, 655353, 5, 589838, 11, 720877, 12, 786423, 9, 786425, 17, 786427, 1, 786429, 5, 720910, 12, 917497, 9, 917499, 13, 917501, 8 )
+_sections_unfolded = [ "Cell" ]
 
 
