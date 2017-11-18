@@ -2,7 +2,7 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wall.png-135b14b4c6b1a004e1c010d9d50af082.stex"
+path="res://.import/lioncfaviconv2.jpg-d604bb80ddceb53b23ade1f596df90a9.stex"
 
 [params]
 
@@ -20,4 +20,4 @@ process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false

@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/Rotator.gd" type="Script" id=1]
+[ext_resource path="res://scenes/test-projectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/lioncfaviconv2.jpg" type="Texture" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+blend_mode = 0
+light_mode = 0
+
+[node name="Node2D" type="Node2D"]
+
+position = Vector2( 504.223, 290.463 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z" ]
+shot = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+material = SubResource( 1 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility" ]
+
+[node name="Label" type="Label" parent="."]
+
+margin_left = -22.0
+margin_top = -83.0
+margin_right = 21.0
+margin_bottom = -69.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Ammo"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
