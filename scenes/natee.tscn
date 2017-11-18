@@ -79,10 +79,10 @@ tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/keys = {
-"times": PoolRealArray( 0.8, 1.5 ),
+"times": PoolRealArray( 0.1, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -0.598755, 8.19727 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -0.598755, 8.19727 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("eyes:rotation_deg")
@@ -90,7 +90,7 @@ tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/keys = {
-"times": PoolRealArray( 0.8, 1.5 ),
+"times": PoolRealArray( 0.1, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
@@ -101,7 +101,7 @@ tracks/5/interp = 2
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/keys = {
-"times": PoolRealArray( 0.8, 1.5 ),
+"times": PoolRealArray( 0.1, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
@@ -334,8 +334,8 @@ __meta__ = {
 
 [node name="body" type="Sprite" parent="base_idle_right"]
 
-position = Vector2( 0, 0.714725 )
-scale = Vector2( 1, 0.988832 )
+position = Vector2( 0, 3.58547 )
+scale = Vector2( 1, 0.943977 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z" ]
 __meta__ = {
@@ -344,7 +344,7 @@ __meta__ = {
 
 [node name="eyes" type="Node2D" parent="base_idle_right"]
 
-position = Vector2( -0.127259, 1.74224 )
+position = Vector2( -0.554909, 7.59699 )
 
 [node name="close" type="Sprite" parent="base_idle_right/eyes"]
 
