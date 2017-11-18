@@ -23,7 +23,7 @@ func _ready():
 	pass
 
 func _input(event):
-	if (on_floor or jumps_available > 0) and event.is_action_pressed("jump") and not event.is_echo():
+	if (on_floor or jumps_available > 0) and event.is_action_pressed("jump") and not event.is_echo() and not is_on_wall():
 		linear_vel.y = -JUMP_SPEED
 		jumps_available -= 1
 	
