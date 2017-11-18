@@ -334,8 +334,8 @@ __meta__ = {
 
 [node name="body" type="Sprite" parent="base_idle_right"]
 
-position = Vector2( 0, 0.549791 )
-scale = Vector2( 1, 0.991409 )
+position = Vector2( 0, 3.76339 )
+scale = Vector2( 1, 0.941197 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z" ]
 __meta__ = {
@@ -344,7 +344,7 @@ __meta__ = {
 
 [node name="eyes" type="Node2D" parent="base_idle_right"]
 
-position = Vector2( 6.42905, 0.00560225 )
+position = Vector2( 6.42905, 3.55127 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="close" type="Sprite" parent="base_idle_right/eyes"]
@@ -358,7 +358,7 @@ _sections_unfolded = [ "Offset", "Transform", "Z" ]
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="base_idle_right/eyes"]
+[node name="blinking eyes" type="AnimationPlayer" parent="base_idle_right/eyes"]
 
 playback_process_mode = 1
 playback_default_blend_time = 0.0
@@ -417,7 +417,7 @@ texture = ExtResource( 4 )
 flip_h = true
 _sections_unfolded = [ "Offset" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="base_idle_left/eyes"]
+[node name="blinking eyes" type="AnimationPlayer" parent="base_idle_left/eyes"]
 
 playback_process_mode = 1
 playback_default_blend_time = 0.0
