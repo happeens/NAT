@@ -8,7 +8,7 @@
 [sub_resource type="Animation" id=1]
 
 resource_name = "blink"
-length = 4.3
+length = 17.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -17,10 +17,10 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2.5, 2.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 1.8, 1.9, 2.3, 2.4, 4.91708, 5.01708, 7.56899, 7.66899, 10.4221, 10.5221, 12.7, 12.8, 14.8, 14.9, 16.7, 16.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ false, true, false ]
+"values": [ true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("open:visible")
@@ -28,10 +28,10 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2.5, 2.6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 1.8, 1.9, 2.3, 2.4, 4.91708, 5.01708, 7.56899, 7.66899, 10.4221, 10.5221, 12.7, 12.8, 14.8, 14.9, 16.7, 16.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ true, false, true ]
+"values": [ false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -82,7 +82,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0.1, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -0.598755, 8.19727 ) ]
+"values": [ Vector2( 6.42905, 0 ), Vector2( 6.42905, 8.19727 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("eyes:rotation_deg")
@@ -294,7 +294,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -0.188717, 1.32098 ), Vector2( 0.061676, 10.8354 ) ]
+"values": [ Vector2( -5.97488, 0.0351715 ), Vector2( -5.97488, 10.8354 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("eyes:rotation_deg")
@@ -334,8 +334,8 @@ __meta__ = {
 
 [node name="body" type="Sprite" parent="base_idle_right"]
 
-position = Vector2( 0, 3.58547 )
-scale = Vector2( 1, 0.943977 )
+position = Vector2( 0, 0.549791 )
+scale = Vector2( 1, 0.991409 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z" ]
 __meta__ = {
@@ -344,7 +344,8 @@ __meta__ = {
 
 [node name="eyes" type="Node2D" parent="base_idle_right"]
 
-position = Vector2( -0.554909, 7.59699 )
+position = Vector2( 6.42905, 0.00560225 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="close" type="Sprite" parent="base_idle_right/eyes"]
 
@@ -388,8 +389,8 @@ _sections_unfolded = [ "Transform", "Visibility", "Z" ]
 
 [node name="body" type="Sprite" parent="base_idle_left"]
 
-position = Vector2( 0, 5.07452 )
-scale = Vector2( 1, 0.920711 )
+position = Vector2( 0, 6.54677 )
+scale = Vector2( 1, 0.897707 )
 texture = ExtResource( 2 )
 flip_h = true
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z" ]
@@ -399,7 +400,8 @@ __meta__ = {
 
 [node name="eyes" type="Node2D" parent="base_idle_left"]
 
-position = Vector2( 0.0370023, 9.89788 )
+position = Vector2( -5.97488, 10.3594 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="close" type="Sprite" parent="base_idle_left/eyes"]
 
