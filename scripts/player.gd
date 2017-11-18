@@ -5,7 +5,7 @@ extends KinematicBody2D
 # var b = "textvar"
 
 export var GRAVITY = Vector2(0, 900)
-export var WALK_SPEED = 900.0
+export var WALK_SPEED = 600.0
 export var JUMP_SPEED = 800.0
 export var WALL_JUMP_VEL = 1600.0
 const FLOOR_NORMAL = Vector2(0, -1)
@@ -38,8 +38,6 @@ func _physics_process(delta):
 	else:
 		wall_jump_timer = 0
 
-	print("wall jump timer: ", wall_jump_timer)
-
 	linear_vel += delta * GRAVITY
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
 	if is_on_floor():
@@ -57,18 +55,13 @@ func _physics_process(delta):
 	target_speed *= WALK_SPEED
 	linear_vel.x = lerp(linear_vel.x, target_speed, 0.1)
 
-	if is_on_wall() and Input.is_action_pressed("jump") and wall_jump_timer == 0:
-		if linear_vel.x > 0:
-			print("going right")
-			linear_vel.x -= WALL_JUMP_VEL
-			wall_jump_timer += WALL_JUMP_COOLDOWN
-		else: if linear_vel.x < 0:
-			print("going left")
-			linear_vel.x += WALL_JUMP_VEL
-			wall_jump_timer += WALL_JUMP_COOLDOWN
-		else:
-			print("not moving")
-		linear_vel.y = -JUMP_SPEED * 0.5
+	if is_on_wall() and !is_on_floor() and Input.is_action_pressed("jump") and wall_jump_timer == 0:
+		print("colliding on wall")
+		var collision = get_slide_collision(0)
+		var collision_direction = collision.get_normal()
+		linear_vel.x += collision_direction.x * WALL_JUMP_VEL
+		wall_jump_timer += WALL_JUMP_COOLDOWN
+		linear_vel.y = -JUMP_SPEED
 
 	if on_floor and Input.is_action_pressed("jump"):
 		linear_vel.y = -JUMP_SPEED

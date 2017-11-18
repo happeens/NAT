@@ -22,6 +22,7 @@ extents = Vector2( 6.00384, 5.97252 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
 position = Vector2( 506.777, 296.37 )
+WALK_SPEED = 600.0
 WALL_JUMP_VEL = 1600.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

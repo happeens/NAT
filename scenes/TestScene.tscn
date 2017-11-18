@@ -434,5 +434,6 @@ shape = SubResource( 1 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
 position = Vector2( 130, 300 )
+WALL_JUMP_VEL = 1600.0
 
 
