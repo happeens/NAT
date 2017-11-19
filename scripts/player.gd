@@ -41,10 +41,12 @@ func _ready():
 	
 	set_weapon(default_weapon)
 
-func set_weapon(weapon):
-	queue_free(weapon)
-	weapon = default_weapon.instance()
-	weapon.set_player(this)
+func set_weapon(new_weapon):
+	if weapon:
+		weapon.queue_free()
+	
+	weapon = new_weapon.instance()
+	weapon.set_player(get_node("."))
 	add_child(weapon)
 
 func is_local():
