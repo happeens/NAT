@@ -7,14 +7,22 @@ var spawned
 var textureRocket
 var texturePistol
 var textureSword
+var sceneRocket
+var scenePistol
+var sceneSword
 var texture
 var currentWeapon
-
+var weaponType
 func _ready():
 	
 	textureSword = preload("res://sprites/pistol dude/sword.png")
 	textureRocket = preload("res://sprites/pistol dude/rocket.png")
 	texturePistol = preload("res://sprites/pistol dude/pistol.png")
+	sceneSword = preload("res://scenes/weapons/sword/sword.tscn")
+	scenePistol = preload("res://scenes/weapons/pistol/pistol.tscn")
+	sceneRocket = preload("res://scenes/weapons/rocket/rcoket.tscn")
+	
+	
 	respawnTime = 10
 	spawned = false
 	elapsedTime = 0
@@ -35,7 +43,7 @@ func _process(delta):
 	pass
 
 func spawnRandomWeapon():
-	var weaponType = randi()%3+1 #returns random int between 1 and 3
+	weaponType = randi()%3+1 #returns random int between 1 and 3
 	print(weaponType)
 	match weaponType:
 		1: 
@@ -57,5 +65,7 @@ func area2DBodyEnter(body):
 			print(body.get_name())
 			spawned = false
 			texture.set_texture(null)
-			#TODO Add weapon to character
-			
+			match weaponType:
+				1: body.set_weapon(scenePistol)
+				2: body.set_weapon(sceneSword)
+				3: body.set_weapon(sceneRocket)
