@@ -8,6 +8,8 @@ var max_ammo = 5
 var ammo = max_ammo
 var last_recharge = OS.get_unix_time()
 
+var player
+
 var recharge_duration = .8
 
 func _ready():
@@ -39,7 +41,16 @@ remote func shoot(where):
 	
 	ammo -= 1
 	update_ammo_label()
+	
+	if ammo < 1:
+		on_ammo_empty()
 
 func update_ammo_label():
 	#ammo_label.set_text( String(ammo) )
+	pass
+
+func set_player(new_player):
+	player = new_player
+
+func on_ammo_empty():
 	pass

@@ -42,8 +42,10 @@ func _ready():
 	set_weapon(default_weapon)
 
 func set_weapon(weapon):
+	queue_free(weapon)
 	weapon = default_weapon.instance()
-	add_child( weapon )
+	weapon.set_player(this)
+	add_child(weapon)
 
 func is_local():
 	return (network_id == get_tree().get_network_unique_id())
