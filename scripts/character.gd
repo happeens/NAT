@@ -57,7 +57,7 @@ remote func handle_weapon_switch(id, new_weapon):
 		character = get_node(".")
 		
 	weapon = new_weapon.instance()
-	weapon.set_player(character)
+	#weapon.set_player(character)
 	add_child(weapon)
 	
 func set_weapon(new_weapon):

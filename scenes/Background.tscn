@@ -33,8 +33,8 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="sky" type="Sprite" parent="fixed/fixed"]
 
-position = Vector2( 1011.55, 594.908 )
-scale = Vector2( 1.05344, 1.00826 )
+position = Vector2( 2589.34, 1538.73 )
+scale = Vector2( 2.69697, 2.5813 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z" ]
 
@@ -57,11 +57,11 @@ _sections_unfolded = [ "Pause", "Scroll" ]
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 3000, 0 )
-_sections_unfolded = [ "Motion" ]
+_sections_unfolded = [ "Motion", "Transform", "Visibility" ]
 
 [node name="mountain_back" type="Sprite" parent="background/background"]
 
-position = Vector2( 1499.93, 599.431 )
+position = Vector2( 1477.36, 1507.91 )
 texture = ExtResource( 2 )
 
 [node name="midground" type="ParallaxBackground" parent="."]
@@ -87,7 +87,7 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="mountain_mid" type="Sprite" parent="midground/midground"]
 
-position = Vector2( 1500.16, 599.726 )
+position = Vector2( 1494.52, 1474.35 )
 texture = ExtResource( 3 )
 
 [node name="foreground" type="ParallaxBackground" parent="."]
@@ -107,13 +107,14 @@ _sections_unfolded = [ "Pause", "Scroll" ]
 [node name="foreground" type="ParallaxLayer" parent="foreground"]
 
 motion_scale = Vector2( 1, 1 )
-motion_offset = Vector2( 0, 0 )
+motion_offset = Vector2( 1000, 0 )
 motion_mirroring = Vector2( 3000, 0 )
 _sections_unfolded = [ "Motion" ]
 
 [node name="mountain_front" type="Sprite" parent="foreground/foreground"]
 
-position = Vector2( 1500.1, 602.053 )
+position = Vector2( 1494.46, 1499.54 )
 texture = ExtResource( 4 )
+_sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
 

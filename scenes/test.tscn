@@ -68,12 +68,12 @@ rect_clip_content = false
 mouse_filter = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+text = "127.0.0.1"
 expand_to_len = false
 focus_mode = 2
 placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
-context_menu_enabled = true
 
 [node name="Host" type="Button" parent="NetworkPanel"]
 
@@ -97,3 +97,5 @@ group = null
 text = "Host"
 flat = false
 script = ExtResource( 3 )
+
+

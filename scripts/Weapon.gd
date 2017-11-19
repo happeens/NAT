@@ -24,14 +24,15 @@ func is_single_player():
 	
 
 remote func handle_aim(id, direction):
-	var player = get_node("/root/Node2D/" + str(id))
-	player.weapon.look_at(direction)
+	#var player = get_node("/root/Node2D/" + str(id))
+	#player.weapon.look_at(direction)
+	pass
 
 func _process(delta):
 	if(is_local()):
 		look_at( get_global_mouse_position())
-		if !is_single_player():
-			rpc_unreliable("handle_aim", get_tree().get_network_unique_id(), get_global_mouse_position())
+		#if !is_single_player():
+		#	rpc_unreliable("handle_aim", get_tree().get_network_unique_id(), get_global_mouse_position())
 	
 	var current_time = OS.get_unix_time()
 	
