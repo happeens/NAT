@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://sprites/tilesets/tilesetgrass.res" type="TileSet" id=1]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/weapons/weaponSpawner.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
 
@@ -54,48 +54,50 @@ position = Vector2( -1070, -1620 )
 
 position = Vector2( -720, -2210 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-
 [node name="SpawnsWeapon" type="Node2D" parent="."]
 
-[node name="Spawn1" type="Sprite" parent="SpawnsWeapon"]
+[node name="weaponSpawner" parent="SpawnsWeapon" instance=ExtResource( 2 )]
 
-position = Vector2( 690, -10 )
+position = Vector2( 620, 30 )
 
-[node name="Spawn2" type="Sprite" parent="SpawnsWeapon"]
+[node name="weaponSpawner2" parent="SpawnsWeapon" instance=ExtResource( 2 )]
 
-position = Vector2( 1140, -20 )
+position = Vector2( 1110, -250 )
 
-[node name="Spawn3" type="Sprite" parent="SpawnsWeapon"]
+[node name="weaponSpawner3" parent="SpawnsWeapon" instance=ExtResource( 2 )]
 
-position = Vector2( 2570, 40 )
+position = Vector2( 910, -1870 )
 
-[node name="Spawn4" type="Sprite" parent="SpawnsWeapon"]
+[node name="weaponSpawner4" parent="SpawnsWeapon" instance=ExtResource( 2 )]
 
-position = Vector2( 2560, -1140 )
+position = Vector2( 270, -1260 )
 
-[node name="Spawn5" type="Sprite" parent="SpawnsWeapon"]
+[node name="weaponSpawner5" parent="SpawnsWeapon" instance=ExtResource( 2 )]
 
-position = Vector2( 990, -1890 )
+position = Vector2( 2560, -2410 )
 
-[node name="Spawn6" type="Sprite" parent="SpawnsWeapon"]
+[node name="weaponSpawner6" parent="SpawnsWeapon" instance=ExtResource( 2 )]
 
-position = Vector2( 1050, -2310 )
+position = Vector2( 1050, -2270 )
 
-[node name="Spawn7" type="Sprite" parent="SpawnsWeapon"]
+[node name="weaponSpawner7" parent="SpawnsWeapon" instance=ExtResource( 2 )]
 
-position = Vector2( 2620, -2420 )
+position = Vector2( -700, -1950 )
 
-[node name="Spawn8" type="Sprite" parent="SpawnsWeapon"]
+[node name="weaponSpawner8" parent="SpawnsWeapon" instance=ExtResource( 2 )]
 
-position = Vector2( 130, -1500 )
+position = Vector2( 2580, -1130 )
 
-[node name="Spawn9" type="Sprite" parent="SpawnsWeapon"]
+[node name="weaponSpawner9" parent="SpawnsWeapon" instance=ExtResource( 2 )]
 
-position = Vector2( 550, -1510 )
+position = Vector2( 1730, -1790 )
 
-[node name="Spawn10" type="Sprite" parent="SpawnsWeapon"]
+[node name="weaponSpawner10" parent="SpawnsWeapon" instance=ExtResource( 2 )]
 
-position = Vector2( -640, -1960 )
+position = Vector2( -730, -970 )
+
+[node name="weaponSpawner11" parent="SpawnsWeapon" instance=ExtResource( 2 )]
+
+position = Vector2( 2500, 20 )
 
 
