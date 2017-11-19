@@ -5,9 +5,7 @@ var speed = 1000
 
 func _ready():
 	set_process(true)
-
-func _process(delta):
-	fly(delta)
 	
-func fly(delta):
-	translate(delta * speed * direction)
+func set_direction(new_direction):
+	direction = new_direction
+	set_linear_velocity(direction * speed)

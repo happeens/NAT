@@ -23,15 +23,16 @@ func _process(delta):
 		last_recharge = current_time
 
 func _input(event):
-	if (true && ammo > 0): #|| event.is_action_pressed("shoot") &
+	if (event.is_action_pressed("shoot") and ammo > 0):
 		shoot(event.get_position() - get_position())
+		#rpc_unreliable("shoot", event.get_position() - get_position())
 
-func shoot(where):
+remote func shoot(where):
 	var theShot = shot.instance()
 	
 	get_tree().get_root().add_child(theShot)
 	theShot.set_position(get_global_position())
-	theShot.direction = where.normalized()
+	theShot.set_direction(where.normalized())
 	theShot.look_at(where)
 	
 	ammo -= 1
