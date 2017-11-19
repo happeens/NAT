@@ -73,6 +73,14 @@ remote func process_position_update(id, pos, vel):
 	character.set_position(pos)
 	character.linear_vel = vel
 
+remote func process_animation_update(id, animation):
+	var character = get_node("/root/Node2D/" + str(id))
+	var natee = character.get_node("natee")
+	natee.enableAnimation(animation)
+	
+func switchAnimation(animation):
+	rpc_unreliable("process_animation_update", get_tree().get_network_unique_id(), animation)
+
 func _physics_process(delta):
 	air_time += delta
 
@@ -82,19 +90,26 @@ func _physics_process(delta):
 		air_time = 0
 
 	var target_speed = 0
+	var animation_type = "idle" # walk, fly, idle
+	var animation_direction = "right" # left, right
 
 	on_floor = air_time < MIN_ONAIR_TIME
 
 	if Input.is_action_pressed("left") and (is_local() or is_single_player()):
 		target_speed += -1
+		animation_direction = "left"
+		animation_type = "walk"
 	if Input.is_action_pressed("right") and (is_local() or is_single_player()):
 		target_speed +=  1
+		animation_direction = "right"
+		animation_type = "walk"
 
 	target_speed *= WALK_SPEED
 	linear_vel.x = lerp(linear_vel.x, target_speed, 0.1)
 
 	if on_floor and Input.is_action_pressed("jump") and (is_local() or is_single_player()):
 		linear_vel.y = -JUMP_SPEED
+		animation_type = "fly"
 	if on_floor:
 		jumps_available = 1
 
