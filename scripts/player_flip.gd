@@ -19,11 +19,13 @@ func _ready():
 	pass
 	
 func enableAnimation(animation):
+	print("enabling animation " + animation)
 	for anim in animations.values(): 
 		var node = get_node(anim)
 		if(node != null):
 			node.hide()
-	get_node(animations[animation]).show()
+	var active = get_node(animations[animation])
+	active.show()
 	
 
 func _process(delta):
@@ -43,7 +45,7 @@ func _process(delta):
 			break;
 		else:
 			character = character.get_parent()
-	enableAnimation("walk_right")
+	#	enableAnimation("walk_right")
 	# walk right
 	#if(character.get_target_speed() > 0):
 	#	enableAnimation("walk_right")

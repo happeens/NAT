@@ -74,24 +74,37 @@ remote func process_position_update(id, pos, vel):
 	character.linear_vel = vel
 
 remote func process_animation_update(id, animation):
-	var character = get_node("/root/Node2D/" + str(id))
+	var character
+	if !is_single_player(): 
+		character = get_node("/root/Node2D/" + str(id))
+	else:
+		character = get_node(".")
 	var natee = character.get_node("natee")
 	natee.enableAnimation(animation)
 	
 func switchAnimation(animation):
-	rpc_unreliable("process_animation_update", get_tree().get_network_unique_id(), animation)
+	if !is_single_player():
+		rpc_unreliable("process_animation_update", get_tree().get_network_unique_id(), animation)
+	else:
+		process_animation_update("singlePlayer", animation)
+
+var old_anim_type = "idle"
+var old_anim_direction = "right"
 
 func _physics_process(delta):
 	air_time += delta
 
 	linear_vel += delta * GRAVITY
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
+	
+	var animation_type = old_anim_type # walk, fly, idle
+	var animation_direction = old_anim_direction # left, right
+	
 	if is_on_floor():
+		animation_type = "idle"
 		air_time = 0
 
 	var target_speed = 0
-	var animation_type = "idle" # walk, fly, idle
-	var animation_direction = "right" # left, right
 
 	on_floor = air_time < MIN_ONAIR_TIME
 
@@ -100,7 +113,7 @@ func _physics_process(delta):
 		animation_direction = "left"
 		animation_type = "walk"
 	if Input.is_action_pressed("right") and (is_local() or is_single_player()):
-		target_speed +=  1
+		target_speed += 1
 		animation_direction = "right"
 		animation_type = "walk"
 
@@ -109,9 +122,21 @@ func _physics_process(delta):
 
 	if on_floor and Input.is_action_pressed("jump") and (is_local() or is_single_player()):
 		linear_vel.y = -JUMP_SPEED
-		animation_type = "fly"
+		
+		
 	if on_floor:
 		jumps_available = 1
+	else:
+		animation_type = "fly"
+	
+#	if on_wall_left or on_wall_right:
+#		animation_type = "wall"
+		
+	if(old_anim_type != animation_type or old_anim_direction != animation_direction):
+		switchAnimation(animation_type + "_" + animation_direction)
+		old_anim_direction = animation_direction
+		old_anim_type = animation_type
+
 
 func enter_wall_left(body):
 	on_wall_left = true
