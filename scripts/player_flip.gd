@@ -18,10 +18,10 @@ func _ready():
 	
 func enableAnimation(animation):
 	for anim in animations.values(): 
-		var node = get_nodes(anim)
+		var node = get_node(anim)
 		if(node != null):
 			node.hide()
-	get_nodes(animations[animation]).show()
+	get_node(animations[animation]).show()
 	
 
 func _process(delta):
@@ -41,11 +41,11 @@ func _process(delta):
 			break;
 		else:
 			character = character.get_parent()
-	
+	enableAnimation("walk_right")
 	# walk right
-	if(character.get_target_speed() > 0):
-		enableAnimation("walk_right")
-	elif(angle < - PI /2 || angle >  PI / 2):
-		enableAnimation("idle_right")
-	else:
-		enableAnimation("idle_left")
+	#if(character.get_target_speed() > 0):
+	#	enableAnimation("walk_right")
+	#elif(angle < - PI /2 || angle >  PI / 2):
+	#	enableAnimation("idle_right")
+	#else:
+	#	enableAnimation("idle_left")

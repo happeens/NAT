@@ -20,11 +20,6 @@ var on_floor = false
 var jumps_available = 1
 
 var network_id = -1
-func get_target_speed():
-	return target_speed
-
-func get_air_time():
-	return air_time
 
 func _ready():
 	pass
