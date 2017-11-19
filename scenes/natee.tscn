@@ -250,7 +250,7 @@ tracks/11/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 
 length = 1.5
 loop = true
@@ -322,9 +322,8 @@ tracks/5/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
-resource_name = "walk_right"
 length = 1.5
 loop = true
 step = 0.1
@@ -593,7 +592,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 0.887773, 1 ) ]
+"values": [ Vector2( 1, 0.859088 ), Vector2( 0.887773, 1 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("eyes:position")
@@ -604,7 +603,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0.61, 1.23 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 14.9432, 0.591934 ), Vector2( 3.37091, 0.591943 ) ]
+"values": [ Vector2( 14.9432, 0.591934 ), Vector2( 7.87122, 0.591934 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("eyes:rotation_deg")
@@ -645,10 +644,10 @@ tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/keys = {
-"times": PoolRealArray( 0.7, 1.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.7, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -55.6096, -1.62032 ), Vector2( -29.507, -1.62032 ) ]
+"values": [ Vector2( -35.3076, -1.62032 ), Vector2( -55.6096, -1.62032 ), Vector2( -29.507, -1.62032 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("dude_walk_particles:rotation_deg")
@@ -670,7 +669,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 0.83377, 0.83377 ), Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -688,7 +687,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -3.42545, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -1.49676, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("body:rotation_deg")
@@ -710,7 +709,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 0.892796, 1 ) ]
+"values": [ Vector2( 0.951128, 0.870765 ), Vector2( 0.892796, 1 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("eyes:position")
@@ -718,10 +717,10 @@ tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/keys = {
-"times": PoolRealArray( 0.53, 1.17 ),
+"times": PoolRealArray( 0.53, 1.16 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -10.6003, 0.0849457 ), Vector2( 0.329122, 0.0849794 ) ]
+"values": [ Vector2( -10.6003, 0.0849457 ), Vector2( -6.16299, 0.0849457 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("eyes:rotation_deg")
@@ -765,7 +764,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0.7, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 48.756, -1.62032 ), Vector2( 32.1937, -1.62032 ) ]
+"values": [ Vector2( 48.756, -1.62032 ), Vector2( 32.0168, -0.977402 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("dude_walk_particles:rotation_deg")
@@ -787,7 +786,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 1.09171, 0.865538 ), Vector2( 1, 1 ) ]
 }
 
 [node name="natee" type="Node2D"]
@@ -904,7 +903,7 @@ autoplay = "blink"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 root_node = NodePath("..")
-anims/idle_right = SubResource( 5 )
+anims/idle_right = SubResource( 4 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -912,23 +911,22 @@ autoplay = "idle_right"
 
 [node name="base_walk_right" type="Node2D" parent="."]
 
-editor/display_folded = true
 visible = false
 scale = Vector2( 0.4, 0.4 )
 _sections_unfolded = [ "Transform", "Visibility", "Z" ]
 
 [node name="dude_walk_particles" type="Sprite" parent="base_walk_right"]
 
-modulate = Color( 1, 1, 1, 0.163245 )
-position = Vector2( -52.2954, -1.62032 )
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -49.9495, -1.62032 )
 texture = ExtResource( 5 )
 hframes = 2
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility" ]
 
 [node name="body" type="Sprite" parent="base_walk_right"]
 
-position = Vector2( 5.44033, 0 )
-scale = Vector2( 0.900931, 1 )
+position = Vector2( 5.72692, 0 )
+scale = Vector2( 0.895712, 1 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z" ]
 __meta__ = {
@@ -937,7 +935,7 @@ __meta__ = {
 
 [node name="eyes" type="Node2D" parent="base_walk_right"]
 
-position = Vector2( 0.930221, 0.185162 )
+position = Vector2( -0.276435, -0.0159467 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="close" type="Sprite" parent="base_walk_right/eyes"]
@@ -950,9 +948,6 @@ _sections_unfolded = [ "Offset", "Transform", "Z" ]
 
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Offset" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="blinking eyes" type="AnimationPlayer" parent="base_walk_right/eyes"]
 
@@ -972,15 +967,14 @@ playback_default_blend_time = 0.0
 root_node = NodePath("..")
 anims/idle_right = SubResource( 2 )
 anims/idle_right_rest = SubResource( 3 )
-anims/walk_right = SubResource( 4 )
+anims/walk_right = SubResource( 5 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
-autoplay = ""
+autoplay = "walk_right"
 
 [node name="base_walk_left" type="Node2D" parent="."]
 
-editor/display_folded = true
 visible = false
 scale = Vector2( 0.4, 0.4 )
 _sections_unfolded = [ "Transform", "Visibility", "Z" ]
@@ -988,7 +982,7 @@ _sections_unfolded = [ "Transform", "Visibility", "Z" ]
 [node name="dude_walk_particles" type="Sprite" parent="base_walk_left"]
 
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 48.756, -1.62032 )
+position = Vector2( 35.509, -1.62032 )
 texture = ExtResource( 5 )
 flip_h = true
 hframes = 2
@@ -996,8 +990,8 @@ _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility
 
 [node name="body" type="Sprite" parent="base_walk_left"]
 
-position = Vector2( -3.42545, 0 )
-scale = Vector2( 0.892796, 1 )
+position = Vector2( -1.20639, 0 )
+scale = Vector2( 0.962244, 1 )
 texture = ExtResource( 6 )
 flip_h = true
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
@@ -1007,7 +1001,7 @@ __meta__ = {
 
 [node name="eyes" type="Node2D" parent="base_walk_left"]
 
-position = Vector2( 4.18655, 0.0849457 )
+position = Vector2( 1.68765, 0.0849675 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="close" type="Sprite" parent="base_walk_left/eyes"]
@@ -1045,31 +1039,30 @@ root_node = NodePath("..")
 anims/idle_right = SubResource( 2 )
 anims/idle_right_rest = SubResource( 3 )
 anims/walk_left = SubResource( 6 )
-anims/walk_right = SubResource( 4 )
+anims/walk_right = SubResource( 5 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
-autoplay = ""
+autoplay = "walk_left"
 
 [node name="base_fly_right" type="Node2D" parent="."]
 
-editor/display_folded = true
-visible = false
 scale = Vector2( 0.4, 0.4 )
 _sections_unfolded = [ "Transform", "Visibility", "Z" ]
 
 [node name="dude_walk_particles" type="Sprite" parent="base_fly_right"]
 
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -50.942, -1.62032 )
+position = Vector2( -37.8141, -1.62032 )
+scale = Vector2( 0.915004, 0.915004 )
 texture = ExtResource( 7 )
 hframes = 2
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility" ]
 
 [node name="body" type="Sprite" parent="base_fly_right"]
 
-position = Vector2( 5.8601, 0 )
-scale = Vector2( 0.893287, 1 )
+position = Vector2( 2.97687, 0 )
+scale = Vector2( 0.945791, 0.927153 )
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z" ]
 __meta__ = {
@@ -1078,7 +1071,7 @@ __meta__ = {
 
 [node name="eyes" type="Node2D" parent="base_fly_right"]
 
-position = Vector2( 11.7172, 0.591937 )
+position = Vector2( 8.91219, 0.591934 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="close" type="Sprite" parent="base_fly_right/eyes"]
@@ -1114,7 +1107,7 @@ root_node = NodePath("..")
 anims/fly_right = SubResource( 7 )
 anims/idle_right = SubResource( 2 )
 anims/idle_right_rest = SubResource( 3 )
-anims/walk_right = SubResource( 4 )
+anims/walk_right = SubResource( 5 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -1122,15 +1115,15 @@ autoplay = "fly_right"
 
 [node name="base_fly_left" type="Node2D" parent="."]
 
-editor/display_folded = true
 visible = false
 scale = Vector2( 0.4, 0.4 )
 _sections_unfolded = [ "Transform", "Visibility", "Z" ]
 
 [node name="dude_walk_particles" type="Sprite" parent="base_fly_left"]
 
-modulate = Color( 1, 1, 1, 0.648284 )
-position = Vector2( 38.5647, -1.62032 )
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 47.8286, -1.5847 )
+scale = Vector2( 1.00381, 0.994413 )
 texture = ExtResource( 7 )
 flip_h = true
 hframes = 2
@@ -1138,8 +1131,8 @@ _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility
 
 [node name="body" type="Sprite" parent="base_fly_left"]
 
-position = Vector2( -0.550646, 0 )
-scale = Vector2( 0.982767, 1 )
+position = Vector2( -1.48922, 0 )
+scale = Vector2( 0.89309, 0.999349 )
 texture = ExtResource( 8 )
 flip_h = true
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
@@ -1149,7 +1142,7 @@ __meta__ = {
 
 [node name="eyes" type="Node2D" parent="base_fly_left"]
 
-position = Vector2( -6.01292, 0.0849598 )
+position = Vector2( -9.34082, 0.0849457 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="close" type="Sprite" parent="base_fly_left/eyes"]
@@ -1188,7 +1181,7 @@ anims/fly_left = SubResource( 8 )
 anims/idle_right = SubResource( 2 )
 anims/idle_right_rest = SubResource( 3 )
 anims/walk_left = SubResource( 6 )
-anims/walk_right = SubResource( 4 )
+anims/walk_right = SubResource( 5 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
