@@ -13,7 +13,7 @@ func _ready():
 	set_process_input(true)
 
 func _process(delta):
-	look_at( get_viewport().get_mouse_position() )
+	look_at( get_global_mouse_position() )
 	
 	var current_time = OS.get_unix_time()
 	
@@ -24,7 +24,7 @@ func _process(delta):
 
 func _input(event):
 	if (event.is_action_pressed("shoot") and ammo > 0):
-		shoot(event.get_position() - get_position())
+		shoot(event.get_global_position() - get_global_position())
 		#rpc_unreliable("shoot", event.get_position() - get_position())
 
 remote func shoot(where):
