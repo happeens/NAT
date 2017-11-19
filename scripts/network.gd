@@ -10,13 +10,14 @@ func _ready():
 	get_tree().connect("connected_to_server", self, "_player_connected")
 
 func _player_joined(id):
-	players[id] = id
 	# print(str(players))
 
 	if !get_tree().is_network_server():
 		return
 	for p in players:
-		rpc_id(id, "spawn_character", p)
+		rpc_id(id, "spawn_character", p, get_node("/root/Node2D/" + str(p)))
+		
+	players[id] = id
 
 func _player_connected():
 	spawn_character_for_all(get_tree().get_network_unique_id())
@@ -24,12 +25,14 @@ func _player_connected():
 func spawn_character_for_all(id):
 	rpc("spawn_character", id)
 
-remote func spawn_character(id):
+remote func spawn_character(id, player):
 	var network_id = get_tree().get_network_unique_id()
 	if network_id == id:
 		spawn_player(load("res://scenes/Player.tscn"), id)
 	else:
-		spawn_player(load("res://scenes/character.tscn"), id)
+		var new_player = spawn_player(load("res://scenes/character.tscn"), id)
+		if(player != null):
+			new_player.set_weapon(player.weapon)
 
 func spawn_player(scene, id):
 	var character = scene.instance()
@@ -47,7 +50,7 @@ func _start_hosted_game():
 	var host = NetworkedMultiplayerENet.new()
 	host.create_server(DEFAULT_PORT, MAX_PEERS)
 	get_tree().set_network_peer(host)
-	spawn_character(1)
+	spawn_character(1, null)
 	players[1] = 1
 
 func _join_game(ip):

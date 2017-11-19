@@ -16,8 +16,22 @@ func _ready():
 	set_process(true)
 	set_process_input(true)
 
+func is_local():
+	return player.is_local()
+
+func is_single_player():
+	return !get_tree().has_network_peer()
+	
+
+remote func handle_aim(id, direction):
+	var player = get_node("/root/Node2D/" + str(id))
+	player.weapon.look_at(direction)
+
 func _process(delta):
-	look_at( get_global_mouse_position() )
+	if(is_local()):
+		look_at( get_global_mouse_position())
+		if !is_single_player():
+			rpc_unreliable("handle_aim", get_tree().get_network_unique_id(), get_global_mouse_position())
 	
 	var current_time = OS.get_unix_time()
 	
@@ -27,7 +41,7 @@ func _process(delta):
 		last_recharge = current_time
 
 func _input(event):
-	if (event.is_action_pressed("shoot") and ammo > 0):
+	if (event.is_action_pressed("shoot") and is_local() and ammo > 0):
 		shoot(launcher.get_global_position() - get_global_position())
 		#rpc_unreliable("shoot", event.get_position() - get_position())
 

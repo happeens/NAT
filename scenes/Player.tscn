@@ -25,15 +25,17 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+WALL_JUMP_VEL = 1600.0
 GRAVITY = Vector2( 0, 900 )
 WALK_SPEED = 900.0
 JUMP_SPEED = 900.0
 WALL_JUMP_VEL = 1600.0
-default_weapon = null
+default_weapon =  ExtResource( 2 )
 
 [node name="character" parent="." instance=ExtResource( 2 )]
 
 position = Vector2( -47.8208, -48.092 )
+
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -110,5 +112,3 @@ _sections_unfolded = [ "Collision" ]
 position = Vector2( -5.123, 1.41035 )
 scale = Vector2( 2.62981, 1.20345 )
 shape = SubResource( 2 )
-
-
