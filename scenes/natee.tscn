@@ -865,8 +865,8 @@ tracks/5/keys = {
 
 [node name="natee" type="Node2D"]
 
-position = Vector2( 174.73, 91.4462 )
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="base_idle_right" type="Node2D" parent="."]
 

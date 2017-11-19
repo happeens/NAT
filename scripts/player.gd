@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends "./character.gd"
 
 # class member variables go here, for example:
 # var a = 2
@@ -15,7 +15,6 @@ const SLOPE_SLIDE_STOP = 25.0
 
 const MIN_ONAIR_TIME = 0.1
 
-var linear_vel = Vector2()
 
 var air_time = 0
 var on_floor = false
@@ -27,8 +26,6 @@ var jumps_available = 1
 
 var weapon
 
-var network_id = -1
-
 func _ready():
 	var wall_left = get_node("wall_left")
 	var wall_right = get_node("wall_right")
@@ -38,22 +35,17 @@ func _ready():
 
 	wall_right.connect("body_entered", self, "enter_wall_right")
 	wall_right.connect("body_exited", self, "exit_wall_right")
-	
+
 	set_weapon(default_weapon)
 
 func set_weapon(new_weapon):
 	if weapon:
 		weapon.queue_free()
-	
+
 	weapon = new_weapon.instance()
 	weapon.set_player(get_node("."))
 	add_child(weapon)
 
-func is_local():
-	return (network_id == get_tree().get_network_unique_id())
-
-func is_single_player():
-	return !get_tree().is_network_server()
 
 func is_touching_wall():
 	return on_wall_left or on_wall_right
@@ -80,28 +72,13 @@ func _process(delta):
 	if is_local():
 		rpc_unreliable("process_position_update", get_tree().get_network_unique_id(), get_position(), linear_vel)
 
-remote func process_position_update(id, pos, vel):
-	if is_local():
-		return
-
-	var character = get_node("/root/Node2D/" + str(id))
-	character.set_position(pos)
-	character.linear_vel = vel
-
-remote func process_animation_update(id, animation):
-	var character
-	if !is_single_player(): 
-		character = get_node("/root/Node2D/" + str(id))
-	else:
-		character = get_node(".")
-	var natee = character.get_node("natee")
-	natee.enableAnimation(animation)
-	
 func switchAnimation(animation):
 	if !is_single_player():
-		rpc_unreliable("process_animation_update", get_tree().get_network_unique_id(), animation)
+		var id = get_tree().get_network_unique_id()
+		rpc_unreliable("process_animation_update", id, animation)
+		process_animation_update(id, animation)
 	else:
-		process_animation_update("singlePlayer", animation)
+		process_animation_update(-1, animation)
 
 var old_anim_type = "idle"
 var old_anim_direction = "right"
@@ -111,10 +88,10 @@ func _physics_process(delta):
 
 	linear_vel += delta * GRAVITY
 	linear_vel = move_and_slide(linear_vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
-	
+
 	var animation_type = old_anim_type # walk, fly, idle
 	var animation_direction = old_anim_direction # left, right
-	
+
 	if is_on_floor():
 		animation_type = "idle"
 		air_time = 0
@@ -137,25 +114,26 @@ func _physics_process(delta):
 
 	if on_floor and Input.is_action_pressed("jump") and (is_local() or is_single_player()):
 		linear_vel.y = -JUMP_SPEED
-		
-		
+
+
 	if on_floor:
 		jumps_available = 1
 	else:
 		animation_type = "fly"
-	
+
 	if on_wall_left:
 		animation_type = "wall"
 		animation_direction = "left"
-		
+
 	if on_wall_right:
 		animation_type = "wall"
 		animation_direction = "right"
-		
+
 	if(old_anim_type != animation_type or old_anim_direction != animation_direction):
-		switchAnimation(animation_type + "_" + animation_direction)
-		old_anim_direction = animation_direction
-		old_anim_type = animation_type
+		if is_local() or is_single_player():
+			switchAnimation(animation_type + "_" + animation_direction)
+			old_anim_direction = animation_direction
+			old_anim_type = animation_type
 
 
 func enter_wall_left(body):

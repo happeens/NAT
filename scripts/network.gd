@@ -29,7 +29,7 @@ remote func spawn_character(id):
 	if network_id == id:
 		spawn_player(load("res://scenes/Player.tscn"), id)
 	else:
-		spawn_player(load("res://scenes/Character.tscn"), id)
+		spawn_player(load("res://scenes/character.tscn"), id)
 
 func spawn_player(scene, id):
 	var character = scene.instance()
