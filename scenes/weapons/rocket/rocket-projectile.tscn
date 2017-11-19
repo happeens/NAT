@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/weapons/rocket/rocket-projectile.gd" type="Script" id=1]
 [ext_resource path="res://scenes/explosions/rocket_smoke.tscn" type="PackedScene" id=2]
-[ext_resource path="res://sprites/pistol dude/rocket_particle.png" type="Texture" id=3]
+[ext_resource path="res://scenes/explosions/rocket_explosion.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sprites/pistol dude/rocket_particle.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
@@ -35,11 +36,12 @@ _sections_unfolded = [ "Pause" ]
 direction = Vector2( 1, 0 )
 SMOKE_TIME = 0.3
 smoke = ExtResource( 2 )
+explosion = ExtResource( 3 )
 
 [node name="test-projectile" type="Sprite" parent="."]
 
 rotation = 1.5708
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
