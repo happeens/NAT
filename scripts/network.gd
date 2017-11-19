@@ -50,11 +50,11 @@ func _start_hosted_game():
 	spawn_character(1)
 	players[1] = 1
 
-func _join_game():
+func _join_game(ip):
 	# load world
 	# spawn player
 	get_node("/root/Node2D/NetworkPanel").queue_free()
 	var host = NetworkedMultiplayerENet.new()
-	host.create_client("127.0.0.1", DEFAULT_PORT)
+	host.create_client(ip, DEFAULT_PORT)
 	get_tree().set_network_peer(host)
 
