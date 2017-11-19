@@ -7,16 +7,16 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 29.9043, 30.748 )
+extents = Vector2( 21.5843, 21.9918 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 5.61272, 33.7053 )
+extents = Vector2( 8.88902, 22.5763 )
 
 [node name="Player" type="KinematicBody2D"]
 
-position = Vector2( 50.4056, 57.8612 )
+position = Vector2( 52.2493, 54.4387 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -60,6 +60,7 @@ editor_draw_drag_margin = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
+position = Vector2( 0.263382, 1.84289 )
 shape = SubResource( 1 )
 
 [node name="natee" parent="." instance=ExtResource( 3 )]
@@ -69,36 +70,44 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="wall_left" type="Area2D" parent="."]
 
-position = Vector2( -49.0439, -0.315254 )
+position = Vector2( -29.0716, -1.47501 )
+scale = Vector2( 0.180033, 0.700552 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 2
+collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall_left"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_left"]
 
-position = Vector2( 11.8273, -0.157623 )
-scale = Vector2( 1, 1 )
+position = Vector2( -5.123, 1.41035 )
+scale = Vector2( 2.62981, 1.20345 )
 shape = SubResource( 2 )
 
 [node name="wall_right" type="Area2D" parent="."]
 
-position = Vector2( 25.3893, 7.62939e-06 )
+position = Vector2( 30.9798, -0.158657 )
+scale = Vector2( 0.180033, 0.700552 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 2
+collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall_right"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_right"]
 
-position = Vector2( 11.8273, -0.157623 )
-scale = Vector2( 1, 1 )
+position = Vector2( -5.123, 1.41035 )
+scale = Vector2( 2.62981, 1.20345 )
 shape = SubResource( 2 )
 
 

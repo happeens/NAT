@@ -17,18 +17,31 @@ var linear_vel = Vector2()
 var air_time = 0
 var on_floor = false
 
+var on_wall_left = false
+var on_wall_right = false
+
 var jumps_available = 1
 
 var network_id = -1
 
 func _ready():
-	pass
+	var wall_left = get_node("wall_left")
+	var wall_right = get_node("wall_right")
+
+	wall_left.connect("body_entered", self, "enter_wall_left")
+	wall_left.connect("body_exited", self, "exit_wall_left")
+
+	wall_right.connect("body_entered", self, "enter_wall_right")
+	wall_right.connect("body_exited", self, "exit_wall_right")
 
 func is_local():
 	return (network_id == get_tree().get_network_unique_id())
 
 func is_single_player():
 	return !get_tree().is_network_server()
+
+func is_touching_wall():
+	return on_wall_left or on_wall_right
 
 func _input(event):
 	if !is_single_player():
@@ -39,10 +52,12 @@ func _input(event):
 		linear_vel.y = -JUMP_SPEED
 		jumps_available -= 1
 
-	if is_on_wall() and !is_on_floor() and Input.is_action_pressed("jump") and not event.is_echo():
-		var collision = get_slide_collision(0)
-		var collision_direction = collision.get_normal()
-		linear_vel.x += collision_direction.x * WALL_JUMP_VEL
+	if is_touching_wall() and !is_on_floor() and Input.is_action_pressed("jump") and not event.is_echo():
+		var direction = 1
+		if on_wall_right:
+			direction = direction * -1
+
+		linear_vel.x += direction * WALL_JUMP_VEL
 		linear_vel.y = -JUMP_SPEED
 		jumps_available += 1
 
@@ -82,3 +97,15 @@ func _physics_process(delta):
 		linear_vel.y = -JUMP_SPEED
 	if on_floor:
 		jumps_available = 1
+
+func enter_wall_left(body):
+	on_wall_left = true
+
+func exit_wall_left(body):
+	on_wall_left = false
+
+func enter_wall_right(body):
+	on_wall_right = true
+
+func exit_wall_right(body):
+	on_wall_right = false
