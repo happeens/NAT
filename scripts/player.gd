@@ -137,13 +137,17 @@ func _physics_process(delta):
 
 
 func enter_wall_left(body):
-	on_wall_left = true
+	if(body.get("network_id") != null and body.network_id != network_id):
+		on_wall_left = true
 
 func exit_wall_left(body):
-	on_wall_left = false
+	if(body.get("network_id") != null and body.network_id != network_id):
+		on_wall_left = false
 
 func enter_wall_right(body):
-	on_wall_right = true
+	if(body.get("network_id") != null and body.network_id != network_id):
+		on_wall_right = true
 
 func exit_wall_right(body):
-	on_wall_right = false
+	if(body.get("network_id") != null and body.network_id != network_id):
+		on_wall_right = false
