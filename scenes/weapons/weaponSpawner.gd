@@ -35,7 +35,8 @@ func _process(delta):
 	pass
 
 func spawnRandomWeapon():
-	var weaponType = randi()%4+1 #returns random int between 1 and 3
+	var weaponType = randi()%3+1 #returns random int between 1 and 3
+	print(weaponType)
 	match weaponType:
 		1: 
 			texture.set_texture(texturePistol)
@@ -44,6 +45,8 @@ func spawnRandomWeapon():
 			texture.set_texture(textureSword)
 			currentWeapon = "Sword"
 		3: 
+			print("rocket")
+			
 			texture.set_texture(textureRocket)
 			currentWeapon = "Rocket"
 
