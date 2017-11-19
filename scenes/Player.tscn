@@ -1,23 +1,23 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
-[ext_resource path="res://scenes/character.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/natee.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/weapons/rocket/rcoket.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/weapons/pistol/pistol.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/character.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/natee.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 21.5843, 21.9918 )
+extents = Vector2( 29.9043, 30.748 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8.88902, 22.5763 )
+extents = Vector2( 5.61272, 33.7053 )
 
 [node name="Player" type="KinematicBody2D"]
 
-position = Vector2( 52.2493, 54.4387 )
+position = Vector2( 50.4056, 57.8612 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -30,8 +30,9 @@ GRAVITY = Vector2( 0, 900 )
 WALK_SPEED = 900.0
 JUMP_SPEED = 900.0
 WALL_JUMP_VEL = 1600.0
+default_weapon = ExtResource( 2 )
 
-[node name="character" parent="." instance=ExtResource( 2 )]
+[node name="character" parent="." instance=ExtResource( 3 )]
 
 position = Vector2( -47.8208, -48.092 )
 
@@ -61,58 +62,43 @@ editor_draw_drag_margin = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-position = Vector2( 0.263382, 1.84289 )
 shape = SubResource( 1 )
 
-[node name="natee" parent="." instance=ExtResource( 3 )]
+[node name="natee" parent="." instance=ExtResource( 4 )]
 
 position = Vector2( 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="wall_left" type="Area2D" parent="."]
 
-position = Vector2( -29.0716, -1.47501 )
-scale = Vector2( 0.180033, 0.700552 )
+position = Vector2( -49.0439, -0.315254 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 2
-collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_left"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall_left"]
 
-position = Vector2( -5.123, 1.41035 )
-scale = Vector2( 2.62981, 1.20345 )
+position = Vector2( 11.8273, -0.157623 )
 shape = SubResource( 2 )
 
 [node name="wall_right" type="Area2D" parent="."]
 
-position = Vector2( 30.9798, -0.158657 )
-scale = Vector2( 0.180033, 0.700552 )
+position = Vector2( 25.3893, 7.62939e-06 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 2
-collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_right"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="wall_right"]
 
-position = Vector2( -5.123, 1.41035 )
-scale = Vector2( 2.62981, 1.20345 )
+position = Vector2( 11.8273, -0.157623 )
 shape = SubResource( 2 )
 
-[node name="Node2D" parent="." instance=ExtResource( 4 )]
 
-show_behind_parent = true
-scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform", "Visibility" ]

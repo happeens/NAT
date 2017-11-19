@@ -8,8 +8,11 @@ export var GRAVITY = Vector2(0, 900)
 export var WALK_SPEED = 600.0
 export var JUMP_SPEED = 800.0
 export var WALL_JUMP_VEL = 1600.0
+export(PackedScene) var default_weapon
+
 const FLOOR_NORMAL = Vector2(0, -1)
 const SLOPE_SLIDE_STOP = 25.0
+
 const MIN_ONAIR_TIME = 0.1
 
 var linear_vel = Vector2()
@@ -22,6 +25,8 @@ var on_wall_right = false
 
 var jumps_available = 1
 
+var weapon
+
 var network_id = -1
 
 func _ready():
@@ -33,6 +38,12 @@ func _ready():
 
 	wall_right.connect("body_entered", self, "enter_wall_right")
 	wall_right.connect("body_exited", self, "exit_wall_right")
+	
+	set_weapon(default_weapon)
+
+func set_weapon(weapon):
+	weapon = default_weapon.instance()
+	add_child( weapon )
 
 func is_local():
 	return (network_id == get_tree().get_network_unique_id())

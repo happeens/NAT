@@ -7,6 +7,5 @@ func shoot(where):
 	var theShot = shot.instance()
 	
 	get_tree().get_root().add_child(theShot)
-	theShot.set_position( get_global_position() )
+	theShot.set_position( launcher.get_global_position() )
 	theShot.look_at(where)
-	theShot.translate( (where - get_position()).normalized() * 200 )
