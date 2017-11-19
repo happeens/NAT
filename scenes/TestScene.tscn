@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://White.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -12,15 +13,17 @@ extents = Vector2( 13, 13 )
 
 [node name="Wall" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( 60, 570 )
 scale = Vector2( 6.875, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall"]
 
@@ -36,16 +39,18 @@ shape = SubResource( 1 )
 
 [node name="Wall12" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( 1859.62, -1547.83 )
 rotation = 0.785397
 scale = Vector2( 11.1149, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall12"]
 
@@ -61,16 +66,18 @@ shape = SubResource( 1 )
 
 [node name="Wall9" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( 380, 1030 )
 rotation = -0.523598
 scale = Vector2( 6.875, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall9"]
 
@@ -86,16 +93,18 @@ shape = SubResource( 1 )
 
 [node name="Wall10" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( 2370.45, 543.631 )
 rotation = -1.57079
 scale = Vector2( 14.3879, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall10"]
 
@@ -111,16 +120,18 @@ shape = SubResource( 1 )
 
 [node name="Wall11" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( 2400.45, -832.15 )
 rotation = -1.57079
 scale = Vector2( 14.3879, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall11"]
 
@@ -136,15 +147,17 @@ shape = SubResource( 1 )
 
 [node name="Wall5" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( 1020, 1390 )
 scale = Vector2( 58.125, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall5"]
 
@@ -160,16 +173,18 @@ shape = SubResource( 1 )
 
 [node name="Wall6" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( -820.663, -446.886 )
 rotation = 1.57079
 scale = Vector2( 58.125, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall6"]
 
@@ -185,16 +200,18 @@ shape = SubResource( 1 )
 
 [node name="Wall7" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( 2839.54, -449.599 )
 rotation = 1.57079
 scale = Vector2( 58.125, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall7"]
 
@@ -210,16 +227,18 @@ shape = SubResource( 1 )
 
 [node name="Wall8" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( 1008.92, -2275.09 )
 rotation = 3.14159
 scale = Vector2( 58.125, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall8"]
 
@@ -235,15 +254,17 @@ shape = SubResource( 1 )
 
 [node name="Wall2" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( 950, 240 )
 scale = Vector2( 6.875, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall2"]
 
@@ -259,16 +280,18 @@ shape = SubResource( 1 )
 
 [node name="Wall13" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( 1580, -250 )
 rotation = 0.523598
 scale = Vector2( 6.875, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall13"]
 
@@ -284,16 +307,18 @@ shape = SubResource( 1 )
 
 [node name="Wall14" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( -206.108, -1315.85 )
 rotation = -0.523598
 scale = Vector2( 6.875, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall14"]
 
@@ -309,16 +334,18 @@ shape = SubResource( 1 )
 
 [node name="Wall15" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( 918.848, -1458.11 )
 rotation = -0.785397
 scale = Vector2( 0.882556, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall15"]
 
@@ -334,15 +361,17 @@ shape = SubResource( 1 )
 
 [node name="Wall16" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( 469.138, -1198.27 )
 scale = Vector2( 0.882556, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall16"]
 
@@ -358,16 +387,18 @@ shape = SubResource( 1 )
 
 [node name="Wall3" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( 248.18, 4.20563 )
 rotation = 0.565061
 scale = Vector2( 6.875, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall3"]
 
@@ -383,16 +414,18 @@ shape = SubResource( 1 )
 
 [node name="Wall4" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( 739.648, -294.87 )
 rotation = 2.69956
 scale = Vector2( 6.875, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall4"]
 
@@ -408,16 +441,18 @@ shape = SubResource( 1 )
 
 [node name="Wall17" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 position = Vector2( 931.389, -947.782 )
 rotation = 3.14159
 scale = Vector2( 16.3939, 0.9375 )
 input_pickable = false
-collision_layer = 1
+collision_layer = 3
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="Wall17"]
 
@@ -434,5 +469,7 @@ shape = SubResource( 1 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
 position = Vector2( 130, 300 )
+
+[node name="Node2D" parent="." instance=ExtResource( 3 )]
 
 

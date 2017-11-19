@@ -11,7 +11,7 @@ func _ready():
 
 func _player_joined(id):
 	players[id] = id
-	print(str(players))
+	# print(str(players))
 
 	if !get_tree().is_network_server():
 		return
@@ -35,7 +35,7 @@ func spawn_player(scene, id):
 	var character = scene.instance()
 	character.set_name(str(id))
 	character.set_network_master(id)
-	print("spawning " + str(id))
+	# print("spawning " + str(id))
 	character.network_id = id
 	get_node("/root/Node2D").add_child(character)
 

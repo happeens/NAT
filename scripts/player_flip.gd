@@ -37,9 +37,9 @@ func _process(delta):
 	
 	var character = get_parent()
 	while character != null:
-		print(character.get_name())
+		# print(character.get_name())
 		if(character.get_name() == "Character"):
-			print("found node!")
+			# print("found node!")
 			break;
 		else:
 			character = character.get_parent()
