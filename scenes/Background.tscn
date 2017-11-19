@@ -71,7 +71,7 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="mountain_front" type="Sprite" parent="ParallaxBackground/foreground"]
 
-position = Vector2( 1525.63, 623.826 )
+position = Vector2( 1529.05, 620.407 )
 texture = ExtResource( 4 )
 
 
