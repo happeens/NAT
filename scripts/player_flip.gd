@@ -9,6 +9,8 @@ var animations = {
 	"idle_left": "./base_idle_left",
 	"walk_right": "./base_walk_right",
 	"walk_left": "./base_walk_left",
+	"fly_right": "./base_fly_right",
+	"fly_left": "./base_fly_left",
 }
 
 func _ready():

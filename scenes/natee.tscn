@@ -919,16 +919,16 @@ _sections_unfolded = [ "Transform", "Visibility", "Z" ]
 
 [node name="dude_walk_particles" type="Sprite" parent="base_walk_right"]
 
-modulate = Color( 1, 1, 1, 0.772393 )
-position = Vector2( -39.9285, -1.62032 )
+modulate = Color( 1, 1, 1, 0.163245 )
+position = Vector2( -52.2954, -1.62032 )
 texture = ExtResource( 5 )
 hframes = 2
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility" ]
 
 [node name="body" type="Sprite" parent="base_walk_right"]
 
-position = Vector2( 1.1076, 0 )
-scale = Vector2( 0.979831, 1 )
+position = Vector2( 5.44033, 0 )
+scale = Vector2( 0.900931, 1 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z" ]
 __meta__ = {
@@ -937,7 +937,7 @@ __meta__ = {
 
 [node name="eyes" type="Node2D" parent="base_walk_right"]
 
-position = Vector2( 3.19764, 0.563064 )
+position = Vector2( 0.930221, 0.185162 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="close" type="Sprite" parent="base_walk_right/eyes"]
@@ -1053,21 +1053,23 @@ autoplay = ""
 
 [node name="base_fly_right" type="Node2D" parent="."]
 
+editor/display_folded = true
+visible = false
 scale = Vector2( 0.4, 0.4 )
 _sections_unfolded = [ "Transform", "Visibility", "Z" ]
 
 [node name="dude_walk_particles" type="Sprite" parent="base_fly_right"]
 
-modulate = Color( 1, 1, 1, 0.455877 )
-position = Vector2( -46.3544, -1.62032 )
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -50.942, -1.62032 )
 texture = ExtResource( 7 )
 hframes = 2
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility" ]
 
 [node name="body" type="Sprite" parent="base_fly_right"]
 
-position = Vector2( 3.42083, 0 )
-scale = Vector2( 0.937706, 1 )
+position = Vector2( 5.8601, 0 )
+scale = Vector2( 0.893287, 1 )
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z" ]
 __meta__ = {
@@ -1076,7 +1078,7 @@ __meta__ = {
 
 [node name="eyes" type="Node2D" parent="base_fly_right"]
 
-position = Vector2( 12.9984, 0.591936 )
+position = Vector2( 11.7172, 0.591937 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="close" type="Sprite" parent="base_fly_right/eyes"]
@@ -1120,13 +1122,15 @@ autoplay = "fly_right"
 
 [node name="base_fly_left" type="Node2D" parent="."]
 
+editor/display_folded = true
+visible = false
 scale = Vector2( 0.4, 0.4 )
 _sections_unfolded = [ "Transform", "Visibility", "Z" ]
 
 [node name="dude_walk_particles" type="Sprite" parent="base_fly_left"]
 
-modulate = Color( 1, 1, 1, 0.387343 )
-position = Vector2( 41.9261, -1.62032 )
+modulate = Color( 1, 1, 1, 0.648284 )
+position = Vector2( 38.5647, -1.62032 )
 texture = ExtResource( 7 )
 flip_h = true
 hframes = 2
@@ -1134,8 +1138,8 @@ _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility
 
 [node name="body" type="Sprite" parent="base_fly_left"]
 
-position = Vector2( -1.58351, 0 )
-scale = Vector2( 0.950442, 1 )
+position = Vector2( -0.550646, 0 )
+scale = Vector2( 0.982767, 1 )
 texture = ExtResource( 8 )
 flip_h = true
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
@@ -1145,7 +1149,7 @@ __meta__ = {
 
 [node name="eyes" type="Node2D" parent="base_fly_left"]
 
-position = Vector2( -9.08638, 0.0849503 )
+position = Vector2( -6.01292, 0.0849598 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="close" type="Sprite" parent="base_fly_left/eyes"]
