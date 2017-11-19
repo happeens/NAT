@@ -12,8 +12,8 @@ config_version=3
 
 run/main_scene="res://scenes/test.tscn"
 icon="res://icon.png"
+main_scene="res://test.tscn"
 name="nat"
-main_scene="Null"
 
 [display]
 
