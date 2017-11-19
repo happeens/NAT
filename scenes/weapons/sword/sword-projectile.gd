@@ -9,3 +9,6 @@ func _process(delta):
 		
 func fly(delta):
 	pass
+	
+func set_direction(new_direction):
+	pass
