@@ -24,7 +24,83 @@ collision_bounce = 0.0
 collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
-tile_data = PoolIntArray( -131086, 3, -131084, 5, -14, 10, -12, 16, -10, 4, 131058, 10, 131060, 20, 196604, 3, 196606, 0, 131072, 0, 131074, 0, 131076, 5, 262126, 2, 262128, 0, 262130, 18, 262132, 20, 327676, 11, 262148, 11, 393202, 10, 393204, 20, 458748, 11, 393220, 12, 524274, 9, 524276, 8, 589820, 11, 720892, 9, 720894, 0, 655360, 4, 851973, 2, 851975, 4, 983028, 2, 983030, 5, 1114102, 11, 1245174, 12, 1572844, 2, 1572846, 0, 1572848, 0, 1572850, 4 )
+tile_data = PoolIntArray( -851987, 6, -851980, 6, -851973, 6, -917502, 6, -917495, 6, -458781, 2, -458779, 0, -458777, 0, -458775, 5, -327703, 11, -262178, 21, -327678, 2, -327676, 0, -327674, 0, -327672, 5, -196631, 11, -131106, 11, -131086, 3, -131084, 5, -196600, 11, -65563, 2, -65561, 0, -65559, 8, -34, 11, -14, 10, -12, 16, -10, 4, -65528, 12, 131038, 12, 131058, 10, 131060, 20, 196604, 3, 196606, 0, 131072, 0, 131074, 0, 131076, 5, 131087, 21, 262126, 2, 262128, 0, 262130, 18, 262132, 20, 327653, 21, 327676, 11, 262148, 11, 262159, 11, 393202, 10, 393204, 20, 458725, 11, 458748, 11, 393220, 12, 393231, 11, 524261, 9, 524263, 4, 524274, 9, 524276, 8, 589820, 11, 524303, 12, 720873, 21, 720892, 9, 720894, 0, 655360, 4, 851945, 11, 851973, 2, 851975, 4, 983017, 11, 983028, 2, 983030, 5, 1114089, 12, 1114102, 11, 1048586, 2, 1048588, 4, 1245174, 12, 1310717, 3, 1310719, 5, 1441789, 9, 1441791, 8, 1572844, 2, 1572846, 0, 1572848, 0, 1572850, 4 )
 _sections_unfolded = [ "Cell" ]
+
+[node name="SpawnsPlayer" type="Node2D" parent="."]
+
+[node name="Spawn1" type="Sprite" parent="SpawnsPlayer"]
+
+position = Vector2( -100, -2270 )
+
+[node name="Spawn2" type="Sprite" parent="SpawnsPlayer"]
+
+position = Vector2( 350, -2270 )
+
+[node name="Spawn3" type="Sprite" parent="SpawnsPlayer"]
+
+position = Vector2( 790, -2270 )
+
+[node name="Spawn4" type="Sprite" parent="SpawnsPlayer"]
+
+position = Vector2( 1240, -2270 )
+
+[node name="Spawn5" type="Sprite" parent="SpawnsPlayer"]
+
+position = Vector2( 1680, -2270 )
+
+[node name="Spawn6" type="Sprite" parent="SpawnsPlayer"]
+
+position = Vector2( -750, -1880 )
+
+[node name="Spawn7" type="Sprite" parent="SpawnsPlayer"]
+
+position = Vector2( -390, -1900 )
+
+[node name="Spawn8" type="Sprite" parent="SpawnsPlayer"]
+
+position = Vector2( 1240, -1700 )
+
+[node name="Spawn9" type="Sprite" parent="SpawnsPlayer"]
+
+position = Vector2( 1630, -1690 )
+
+[node name="SpawnsWeapon" type="Node2D" parent="."]
+
+[node name="Spawn1" type="Sprite" parent="SpawnsWeapon"]
+
+position = Vector2( 1430, -1690 )
+
+[node name="Spawn2" type="Sprite" parent="SpawnsWeapon"]
+
+position = Vector2( -570, -1890 )
+
+[node name="Spawn3" type="Sprite" parent="SpawnsWeapon"]
+
+position = Vector2( -540, -1500 )
+
+[node name="Spawn4" type="Sprite" parent="SpawnsWeapon"]
+
+position = Vector2( 1040, -740 )
+
+[node name="Spawn5" type="Sprite" parent="SpawnsWeapon"]
+
+position = Vector2( 30, -1170 )
+
+[node name="Spawn6" type="Sprite" parent="SpawnsWeapon"]
+
+position = Vector2( 410, -500 )
+
+[node name="Spawn7" type="Sprite" parent="SpawnsWeapon"]
+
+position = Vector2( 1800, -350 )
+
+[node name="Spawn8" type="Sprite" parent="SpawnsWeapon"]
+
+position = Vector2( 30, 100 )
+
+[node name="Spawn9" type="Sprite" parent="SpawnsWeapon"]
+
+position = Vector2( 2080, -1260 )
 
 
