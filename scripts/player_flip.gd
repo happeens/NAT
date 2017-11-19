@@ -21,7 +21,6 @@ func _ready():
 	pass
 	
 func enableAnimation(animation):
-	print("enabling animation " + animation)
 	for anim in animations.values(): 
 		var node = get_node(anim)
 		if(node != null):
