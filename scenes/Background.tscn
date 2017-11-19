@@ -10,7 +10,63 @@
 scale = Vector2( 0.5, 0.5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="fixed" type="ParallaxBackground" parent="."]
+
+editor/display_folded = true
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 0.5, 0.5 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 0, 0 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+_sections_unfolded = [ "Pause", "Scroll" ]
+
+[node name="fixed" type="ParallaxLayer" parent="fixed"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="sky" type="Sprite" parent="fixed/fixed"]
+
+position = Vector2( 1011.55, 594.908 )
+scale = Vector2( 1.05344, 1.00826 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z" ]
+
+[node name="background" type="ParallaxBackground" parent="."]
+
+editor/display_folded = true
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 0.5, 0.5 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 0.1, 0.1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+_sections_unfolded = [ "Pause", "Scroll" ]
+
+[node name="background" type="ParallaxLayer" parent="background"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 3000, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="mountain_back" type="Sprite" parent="background/background"]
+
+position = Vector2( 1499.93, 599.431 )
+texture = ExtResource( 2 )
+
+[node name="midground" type="ParallaxBackground" parent="."]
 
 layer = -1
 offset = Vector2( 0, 0 )
@@ -18,60 +74,48 @@ rotation = 0.0
 scale = Vector2( 0.5, 0.5 )
 scroll_offset = Vector2( 0, 0 )
 scroll_base_offset = Vector2( 0, 0 )
-scroll_base_scale = Vector2( 1, 1 )
+scroll_base_scale = Vector2( 0.2, 0.2 )
 scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = true
+_sections_unfolded = [ "Pause", "Scroll" ]
 
-[node name="fixed" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="midground" type="ParallaxLayer" parent="midground"]
 
-motion_scale = Vector2( 1, 1 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
-
-[node name="sky" type="Sprite" parent="ParallaxBackground/fixed"]
-
-position = Vector2( 1027.81, 606.125 )
-scale = Vector2( 1.05344, 1.00826 )
-texture = ExtResource( 1 )
-_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility", "Z" ]
-
-[node name="background" type="ParallaxLayer" parent="ParallaxBackground"]
-
-editor/display_folded = true
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 3000, 0 )
 _sections_unfolded = [ "Motion" ]
 
-[node name="mountain_back" type="Sprite" parent="ParallaxBackground/background"]
+[node name="mountain_mid" type="Sprite" parent="midground/midground"]
 
-position = Vector2( 1508.53, 616.07 )
-texture = ExtResource( 2 )
-
-[node name="midground" type="ParallaxLayer" parent="ParallaxBackground"]
-
-editor/display_folded = true
-motion_scale = Vector2( 1, 1 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 3000, 0 )
-_sections_unfolded = [ "Motion" ]
-
-[node name="mountain_mid" type="Sprite" parent="ParallaxBackground/midground"]
-
-position = Vector2( 1488.01, 622.909 )
+position = Vector2( 1500.16, 599.726 )
 texture = ExtResource( 3 )
 
-[node name="foreground" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="foreground" type="ParallaxBackground" parent="."]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 0.5, 0.5 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 0.3, 0.3 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+_sections_unfolded = [ "Pause", "Scroll" ]
+
+[node name="foreground" type="ParallaxLayer" parent="foreground"]
 
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 3000, 0 )
 _sections_unfolded = [ "Motion" ]
 
-[node name="mountain_front" type="Sprite" parent="ParallaxBackground/foreground"]
+[node name="mountain_front" type="Sprite" parent="foreground/foreground"]
 
-position = Vector2( 1529.05, 620.407 )
+position = Vector2( 1500.1, 602.053 )
 texture = ExtResource( 4 )
 
 
