@@ -129,8 +129,13 @@ func _physics_process(delta):
 	else:
 		animation_type = "fly"
 	
-#	if on_wall_left or on_wall_right:
-#		animation_type = "wall"
+	if on_wall_left:
+		animation_type = "wall"
+		animation_direction = "left"
+		
+	if on_wall_right:
+		animation_type = "wall"
+		animation_direction = "right"
 		
 	if(old_anim_type != animation_type or old_anim_direction != animation_direction):
 		switchAnimation(animation_type + "_" + animation_direction)

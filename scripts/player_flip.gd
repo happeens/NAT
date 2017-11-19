@@ -11,6 +11,8 @@ var animations = {
 	"walk_left": "./base_walk_left",
 	"fly_right": "./base_fly_right",
 	"fly_left": "./base_fly_left",
+	"wall_right": "./base_wall_right",
+	"wall_left": "./base_wall_left",
 }
 
 func _ready():
