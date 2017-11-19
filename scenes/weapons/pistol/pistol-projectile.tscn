@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 11.7716
 height = 58.6513
 
-[node name="Node2D" type="RigidBody2D"]
+[node name="body" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -18,11 +18,11 @@ mode = 0
 mass = 1.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
+gravity_scale = 0.0
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
+contacts_reported = 2
+contact_monitor = true
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
